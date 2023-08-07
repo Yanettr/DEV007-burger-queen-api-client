@@ -1,0 +1,39 @@
+
+
+.loginTotal{
+    display: flex;
+    width: 1024px;
+    height: 768px;
+    background: #CF463F;
+    background-image: url("img/imgfondo.png");
+    /*background-image: url("images/fondo.png");*/
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: -70%;
+}
+.logoLogin{
+    width: 40%;
+    height: 100%;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #760909;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 60px;
+}
+.logoLogin img{
+width: 180%;
+margin-left: -40%;
+}
+
+.formLogin{
+    width: 56%;
+    height: 100%;
+    margin-top: -10px;
+   /*display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;*/
+}
