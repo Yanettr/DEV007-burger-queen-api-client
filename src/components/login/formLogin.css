@@ -1,84 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Nerko+One&display=swap');
 
-.sectionLogin{
-    width: 596px;
-height: 730px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.sectionLogin {
+  width: 596px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h2{
-    color: #FFE0AF;
-    text-align: center;
-    font-family: 'Nerko One', cursive;
-    font-size: 120px;
-    font-style: normal;
-    font-weight: 400;
-    margin-bottom: 0px;
+h2 {
+  color: #FFE0AF;
+  text-align: center;
+  font-family: 'Nerko One', cursive;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 0px;
 }
 
-.formLogin{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.email{
-    width: 362.012px;
-    height: 50px;
-    border: none;
-    background-color:  #CF463F;
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    border-bottom: 5px solid #FFE0AF;
+.user {
+  width: 90px;
+  height: 90px;
+  align-items: center;
+  border-radius: 50%;
+  border: 8px solid  #760909;
+  margin-bottom: 30px;
 }
 
-.user{
-width: 90px;
-height: 90px;
-align-items: center;
-border-radius: 50%;
-border: 8px solid  #760909;
-margin-bottom: 30px;
-}
 .user img {
-    border-radius: 50px;
-    width: 100%;
-    margin-bottom: -10px;
+  border-radius: 50px;
+  width: 100%;
+  margin-bottom: -10px;
 }
 
-.password{
-    width: 362.012px;
-    height: 50px;
-    border: none;
-    background-color:  #CF463F;
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    border-bottom: 5px solid #FFE0AF;
+.email,
+.password {
+  width: 362.012px;
+  height: 50px;
+  border: none;
+  background-color:  #CF463F;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 5px solid #FFE0AF;
+  color: rgb(224, 224, 224);
 }
 
-.password::placeholder { color: rgb(224, 224, 224); font-weight: bold; }
-.email::placeholder { color: rgb(224, 224, 224); font-weight: bold; }
-
-.buttonLogin{
-    width: 462px;
-    height: 81px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: #760909;
-    color: #FFF;
-text-align: center;
-font-family: 'Inter', sans-serif;
-font-size: 32px;
-font-style: normal;
-font-weight: 900;
-line-height: normal;
-margin-top: -40px;
+.email::placeholder,
+.password::placeholder {
+  color: rgb(224, 224, 224);
+  font-weight: bold;
 }
+
+.buttonLogin {
+  width: 391px;
+  height: 81px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #760909;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 40px;
+}
+
+button:hover {
+  background-color: #AE2222;
+}
+

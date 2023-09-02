@@ -1,0 +1,73 @@
+/* Estilo para el contenedor principal */
+.loginTotal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background: #CF463F;
+    background-image: url("img/imgfondo.png");
+    background-color: rgb(207, 70, 63);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: -70%;
+  }
+  
+  /* Estilo para la sección del logo */
+  .logoLogin {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: #760909;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+  }
+  
+  .logoLogin img {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin-left: 0;
+    height: auto;
+  }
+  
+  /* Estilo para la sección del formulario */
+  .formLogin {
+    width: 100%;
+    height: auto;
+    margin-top: 13px;
+  }
+  
+  /* Media Query para pantallas más grandes */
+  @media (min-width: 768px) {
+    /* Restaura los estilos originales para pantallas más grandes */
+    .loginTotal {
+      flex-direction: row;
+      height: 768px;
+    }
+  
+    .logoLogin {
+      width: 40%;
+      height: 100%;
+      margin-right: 60px;
+    }
+  
+    .logoLogin img {
+      width: 163%;
+      margin-top: 60px;
+      margin-bottom: 82px;
+      margin-right: 47px;
+      margin-left: -72px;
+      height: 126%;
+    }
+  
+    .formLogin {
+      width: 56%;
+      height: 100%;
+      margin-top: 13px;
+    }
+  }
+  
