@@ -1,0 +1,88 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    width: 94%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin-top: 2%;
+}
+
+.navDesplegable{
+  display: flex;
+  justify-content: end;
+}
+  
+  /* Estilos para el logo */
+  .user-nav {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Estilos para el título en el header */
+  .header-title {
+    font-size: 24px;
+  }
+  
+  /* Estilos para el menú desplegable */
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFE0AF;
+    border-radius: 10px;
+    width: 150px;
+    height: 145px;
+    margin-top: -40px;
+    z-index: 2;
+
+  }
+
+  .nav-link{
+    width: 140px;
+    height: 46.912px;
+    border-radius: 10px;
+    background: #CF463F;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0); /* Color predeterminado del texto */
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .dropdown-button {
+    width: 52.847px;
+    height: 53.797px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background-image: url("img/menu.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right-bottom;
+  }
+  
+  .user-navBar{
+    width: 90px;
+    height: 90px;
+  }
+
+  .user-navBar img{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+
+  

@@ -1,0 +1,11 @@
+.EditButton {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-image: url("img/editar.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right-bottom;
+}
