@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import  { useState } from 'react';
 import './ButtonView.css';
 
-function ButtonViews({ Text1, Text2 }) {
+function ButtonViews({ Text1, Text2, onClickButton1, onClickButton2 }) {
   const [clickedButton, setClickedButton] = useState(1);
 
   const handleButtonClick = (buttonNumber) => {
@@ -15,6 +15,7 @@ function ButtonViews({ Text1, Text2 }) {
         className={`button-view ${clickedButton === 1 ? 'active' : ''}`}
         onClick={() => {
           handleButtonClick(1);
+          onClickButton1();
          }}
       >
         {Text1}
@@ -23,6 +24,7 @@ function ButtonViews({ Text1, Text2 }) {
         className={`button-view ${clickedButton === 2 ? 'active' : ''}`}
         onClick={() => {
           handleButtonClick(2);
+          onClickButton2();
         }}
       >
         {Text2}

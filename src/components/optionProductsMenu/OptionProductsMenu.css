@@ -1,12 +1,10 @@
 .optionProducts {
-    width: 520px;
-    height: 520px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     background-color: white;
-    overflow: scroll;
   }
+ 
   
   h5 {
     margin: 15px 0px 1px 0px;

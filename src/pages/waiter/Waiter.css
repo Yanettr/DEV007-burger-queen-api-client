@@ -12,24 +12,24 @@
 }
 
 .container1 {
-    width: 1024px;
-    height: 600px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 100vh;
+    background: #CF463F;
 }
 
 .extra1{
     background: white;
     width: 55%;
-    height: 58.2%;
+    height: 84%;
+    overflow-y: scroll;
 }
 .order {
     background: white;
     width: 50%;
-    height: 51.5%;
+    height: 76%;
     padding: 30px 10px;
     overflow: scroll;
 }

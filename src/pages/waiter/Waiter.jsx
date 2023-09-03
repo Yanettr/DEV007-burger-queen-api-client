@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import './Waiter.css';
 import Swal from 'sweetalert2';
-import OptionsProductsMenu from '../../components/menu/OptionProductsMenu';
 import ProductsOrder from '../../components/productsOrder/ProductsOrder';
 import Header from '../../components/header/Header';
 import ButtonViews from '../../components/buttonView/ButtonView';
 import NameOrder from '../../components/nameOrder/NameOrder';
+import OptionsProductsMenu from '../../components/optionProductsMenu/optionProductsMenu';
 
 const Waiter = () => {
   const [order, setOrder] = useState([]);
