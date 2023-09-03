@@ -7,6 +7,7 @@ import Header from '../../components/header/Header';
 import ButtonViews from '../../components/buttonView/ButtonView';
 import NameOrder from '../../components/nameOrder/NameOrder';
 import OptionsProductsMenu from '../../components/optionProductsMenu/optionProductsMenu';
+import {createOrder} from '../../utils/apiFunctions';
 
 const Waiter = () => {
   const [order, setOrder] = useState([]);
@@ -59,39 +60,51 @@ const Waiter = () => {
         confirmButtonColor: '#760909'
       });
       return;
+    } else{
+        
+      const orderObject = {
+        client: customerName,
+        products: order.map(product => ({
+          qty: product.quantity,
+          product: {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            type: product.type,
+            dateEntry: product.dateEntry,
+          },
+        })),
+        status: 'pending',
+        dateEntry: new Date().toISOString(),
+      };
+
+      createOrder(orderObject).then((response) => {  
+
+        Swal.fire({
+          title: 'Perfecto',
+          text: 'Tu Orden fue generada con exito',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#760909'
+        });
+        // Aqui va lo que queremos en la API
+        console.log('Orden generada:', orderObject);
+        console.log('Orden api:', response);
+  
+      })
+      .catch((error) => { 
+console.log(error)
+       })
+
     }
 
-    const orderObject = {
-      client: customerName,
-      products: order.map(product => ({
-        qty: product.quantity,
-        product: {
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          image: product.image,
-          type: product.type,
-          dateEntry: product.dateEntry,
-        },
-      })),
-      status: 'pending',
-      dateEntry: new Date().toISOString(),
-    };
-// Restablece la orden a un estado inicial vacío
-setOrder([]);
+    // Restablece la orden a un estado inicial vacío
+    setOrder([]);
 
-// Restablece el nombre del cliente a un estado inicial vacío
-setCustomerName('');
+    // Restablece el nombre del cliente a un estado inicial vacío
+    setCustomerName('');
 
-Swal.fire({
-  title: 'Perfecto',
-  text: 'Tu Orden fue generada con exito',
-  icon: 'success',
-  confirmButtonText: 'Ok',
-  confirmButtonColor: '#760909'
-});
-    // Aqui va lo que queremos en la API
-    console.log('Orden generada:', orderObject);
   };
 
   return (

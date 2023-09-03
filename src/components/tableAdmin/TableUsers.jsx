@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPen, faUserXmark, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import Button from '../button/Button';
-import './Dashboard.css'
+import './TableUsers.css'
 
 
 const iconAddWorker = <FontAwesomeIcon icon={faUserPlus} size="lg" style={{ color: "#FFFF" }} />;
 const iconEditWorker = <FontAwesomeIcon icon={faUserPen} size="2x" style={{ color: "#1E3050" }} />;
 const iconDeleteWorker = <FontAwesomeIcon icon={faUserXmark} size="2x" style={{ color: "#D11515" }} />;
 
-const Dashboard = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, handleEditar }) => {
+const TableUsers = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, handleEditar }) => {
 
   return (
     <div className='new-container'>
@@ -50,7 +50,7 @@ const Dashboard = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, ha
   );
 };
 
-Dashboard.propTypes = {
+TableUsers.propTypes = {
   setShowEditForm: PropTypes.func,
   workers: PropTypes.array,
   handleAddWorker: PropTypes.func,
@@ -58,5 +58,5 @@ Dashboard.propTypes = {
   handleEditar: PropTypes.func,
 };
 
-export default Dashboard;
+export default TableUsers;
 

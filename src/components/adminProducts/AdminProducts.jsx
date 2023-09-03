@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 import ButtonViews from '../buttonView/ButtonView';
 import ModalApp from '../modal/ModalApp';
 import FormProducts from '../formProducts/FormProducts';
-import DashboardProducts from '../dashboard/DashboardProducts';
+import TableProducts from '../TableAdmin/TableProducts';
+
 
 const AdminProducts = () => {
   const [products, setProducts] = useState([]);
@@ -236,7 +237,7 @@ const AdminProducts = () => {
     </div>
 
       <div className='container-dashboard-btnAddWorker'>
-        <DashboardProducts
+        <TableProducts
           setShowEditForm={setShowEditForm}
           products={products}
           openModal={openModal}

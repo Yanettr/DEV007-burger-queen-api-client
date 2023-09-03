@@ -5,14 +5,14 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import Button from '../button/Button';
-import './DashboardProducts.css'
+import './TableProducts.css'
 
 
 const iconAddProduct = <FontAwesomeIcon icon={faSquarePlus} size="xl" style={{ color: "#FFFF", }} />
 const iconEditProduct = <FontAwesomeIcon icon={faPenToSquare} size="2xl" style={{ color: "#1E3050", }} />
 const iconDeleteProduct = <FontAwesomeIcon icon={faRectangleXmark} size="2xl" style={{ color: "#D11515", }} />
 
-const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handleDeleteProduct, handleEditProduct, workersView }) => {
+const TableProducts = ({ setShowEditForm, products, handleAddProduct, handleDeleteProduct, handleEditProduct, workersView }) => {
 
   
   return (
@@ -59,7 +59,7 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
   )
 };
 
-DashboardProducts.propTypes = {
+TableProducts.propTypes = {
   setShowEditForm: PropTypes.func,
   products: PropTypes.array,
   handleAddProduct: PropTypes.func,
@@ -67,4 +67,4 @@ DashboardProducts.propTypes = {
   handleEditProduct: PropTypes.func,
   workersView: PropTypes.func
 }
-export default DashboardProducts
+export default TableProducts

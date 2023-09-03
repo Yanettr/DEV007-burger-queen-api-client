@@ -2,6 +2,7 @@ import './chef.css';
 import Ticket from '../../components/ticket/Tickets';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import {editOrder} from '../../utils/apiFunctions';
 
 const Chef = () => {
   const [orders, setOrders] = useState([]);
@@ -82,21 +83,77 @@ const Chef = () => {
     });
   };
 
+  const getProductsList = (products) => {
+    return products.map((item) => `${item.qty} ${item.product.name}`).join(', ');
+  };
+
+  const getTotalOrder = (prices) => {
+    return prices.reduce(
+      (total, item) => total + item.qty * item.product.price,
+      0
+    );
+  };
+
   return (
     <div className='body'>
       <section className='title-chef-orders'>
         <h1 className='title-orders'>Ordenes</h1>
       </section>
       <section className='container-cooking'>
-        <div className='container-order-ticket'>
-          {orders
-            .filter(order => order.status === 'pending')
-            .map(order => (<Ticket key={order.id} order={order} changeStatus={changeStatus} showButton={true} />))}
-        </div>
-        <div className='container-delivery'>
-          {orders
-            .filter(order => order.status === 'delivery')
-            .map(order => (<Ticket key={order.id} order={order} showButton={false} />))}
+        <div className='container-orders-table'>
+          <table className='orders-table'>
+              <thead>
+                <tr>
+                  <th className="tableHeader">MESA</th>
+                  <th className="tableHeader">CLIENTE</th>
+                  <th className="tableHeader">PEDIDO</th>
+                  <th className="tableHeader">ESTATUS</th>
+                  <th className="tableHeader">FECHA</th>
+                  <th className="tableHeader">TOTAL</th>
+                  <th className="tableHeader">ENTREGAR</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orders.sort((a, b) => {
+                    const fechaA = new Date(a.dateEntry);
+                    const fechaB = new Date(b.dateEntry);
+                    
+                    return fechaB - fechaA;
+                  }).map((order) => (
+                  <tr key={order.id}>
+                    <td>
+                      #{order.table}
+                    </td>
+                    <td>
+                      {order.client}
+                    </td>
+                    <td>
+                      {getProductsList(order.products)}
+                    </td>
+                    <td>
+                      {order.status}
+                    </td>
+                    <td>
+                      {order.dateEntry}
+                    </td>
+                    <td>
+                      ${getTotalOrder(order.products)},00
+                    </td>
+                    <td className='buttonsTable'>
+                    {order.status == 'pending' && ( //condicional para solo mostrar el boton de actualizar al chef
+                      <button
+                        className="btnEstado"
+                        onClick={() => editOrder(token, order.id, "delivered")}
+                      >
+                        ACTUALIZAR
+                      </button>
+                    )}
+
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+          </table> 
         </div>
         <Link to="/">
           <img src="/src/assets/flechas.png" alt="" className="botton-back-chef" />

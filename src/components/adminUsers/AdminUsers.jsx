@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import AdminHeader from '../adminHeader/AdminHeader';
 import FormUsers from '../../components/formUsers/FormUsers';
-import Dashboard from '../dashboard/Dashboard';
 import ModalApp from '../modal/ModalApp';
 import ButtonViews from '../buttonView/ButtonView';
+import TableUsers from '../TableAdmin/TableUsers';
 
  const AdminUsers = () => { 
     const [workers, setWorkers] = useState([]);
@@ -226,7 +226,7 @@ import ButtonViews from '../buttonView/ButtonView';
    
    
         <div className='container-dashboard-btnAddWorker'>
-          <Dashboard
+          <TableUsers
             setShowEditForm={setShowEditForm}
             workers={workers}
             openModal={openModal}

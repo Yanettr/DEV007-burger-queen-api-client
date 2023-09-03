@@ -47,3 +47,22 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 }
+
+.button-min{
+    height: 34px;
+    width: max-content;
+    flex-shrink: 0;
+    border-radius: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: #760909;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 900;
+}
+tr{
+    height: 40px;
+}

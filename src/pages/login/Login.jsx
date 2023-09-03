@@ -26,7 +26,7 @@ const Login = () => {
         const isAdmin = userRole === 'admin';
         const isWaiter = userRole === 'waiter';
         const isChef = userRole === 'cheff'
-        let route = '/Kitchen';
+        let route = '/Chef';
         if (isAdmin) {
           route ='/Admin';
         } else if (isWaiter) {
