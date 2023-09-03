@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import  { useState } from 'react';
 import './ButtonView.css';
 
-function ButtonViews({ Text1, Text2, onClickButton1, onClickButton2 }) {
+function ButtonViews({ Text1, Text2 }) {
   const [clickedButton, setClickedButton] = useState(1);
 
   const handleButtonClick = (buttonNumber) => {

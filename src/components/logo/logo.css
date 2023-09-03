@@ -2,3 +2,12 @@
     width: 596px;
     height: 834px;
 }
+.content-logo-img {
+    height: 200px;
+}
+/* Estilos para celular */
+@media (max-width: 768px) {
+    .content-logo-img {
+        height: 84px;
+    }
+}
