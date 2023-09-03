@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import './page404.css';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../../components/logo/logo';
+import Button from '../../components/button/Button';
 
 const Page404 = () => {
   const navigate = useNavigate();
@@ -14,10 +14,7 @@ const Page404 = () => {
       <div className='Logo404'>
         <Logo />
       </div>
-
-      <div className='button-error'>
-        <Button onClick={() => navigate('/')} variant='danger'>Volver al inicio</Button>
-      </div>
+        <Button className='button-error' onClick={() => navigate('/')} variant='danger'>Volver al inicio</Button>
     </section>
   );
 }
