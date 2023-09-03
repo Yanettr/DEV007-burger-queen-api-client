@@ -1,0 +1,49 @@
+.body{
+  
+    width: 1024px;
+    height: 768px;
+    background: #CF463F;
+    background-image: url("img/imgfondo.png");
+    /*background-image: url("images/fondo.png");*/
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: -70%;
+}
+
+.container1 {
+    width: 1024px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+.extra1{
+    background: white;
+    width: 55%;
+    height: 58.2%;
+}
+.order {
+    background: white;
+    width: 50%;
+    height: 51.5%;
+    padding: 30px 10px;
+    overflow: scroll;
+}
+
+.buttonGenerarOrder{
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    background: #760909;
+    color: #FFF;
+text-align: center;
+font-family: 'Inter', sans-serif;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}

@@ -1,0 +1,51 @@
+.information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h5 {
+    margin: 0px 5px 0px 5px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.Container-Order{
+    background-color: white;
+}
+
+.buttonmas-small {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    display: flex;
+    align-content: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.buttonmenos-small {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    display: flex;
+    align-content: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.increase-decrease{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Price-Delete{
+    display: flex;
+    align-items: center;
+}
