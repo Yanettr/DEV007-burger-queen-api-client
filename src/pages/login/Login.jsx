@@ -15,7 +15,6 @@ const Login = () => {
       .then((response) => {
         const userRole = response.user.role;
         const userId = response.user.id;
-        console.log(response);
         const accessToken = response.accessToken; // Obtén el token de la respuesta
       
       // Guarda el token en localStorage
@@ -29,7 +28,7 @@ const Login = () => {
         const isChef = userRole === 'chef'
         let route = '/Kitchen';
         if (isAdmin) {
-          route ='/AdminUsers';
+          route ='/Admin';
         } else if (isWaiter) {
           route ='/Menu';
         }
@@ -39,7 +38,7 @@ const Login = () => {
         navigate(route);
       })
       .catch((error) => {
-        console.error(error); // Puedes imprimir el error en la consola para depuración
+        console.error("Catch",error); // Puedes imprimir el error en la consola para depuración
         Swal.fire({
           title: 'Error!',
           text: 'Datos incorrectos. Por favor, inténtalo nuevamente.',

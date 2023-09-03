@@ -1,8 +1,14 @@
-const Admin = () => (
+import AdminProducts from "../../components/adminProducts/AdminProducts";
+import AdminUsers from "../../components/adminUsers/AdminUsers";
+
+
+function Admin() {
+  return (
     <>
-      <h1>Página no encontrada</h1>
-      <span>La página solicitada, no existe</span>
+      <AdminProducts/>
+      <AdminUsers/>
     </>
-  )
-  
-  export default Admin 
+  );
+}
+
+export default Admin;

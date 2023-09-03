@@ -15,8 +15,7 @@ function ButtonViews({ Text1, Text2, onClickButton1, onClickButton2 }) {
         className={`button-view ${clickedButton === 1 ? 'active' : ''}`}
         onClick={() => {
           handleButtonClick(1);
-          onClickButton1(); // Llama a la función proporcionada al hacer clic en el botón 1
-        }}
+         }}
       >
         {Text1}
       </button>
@@ -24,7 +23,6 @@ function ButtonViews({ Text1, Text2, onClickButton1, onClickButton2 }) {
         className={`button-view ${clickedButton === 2 ? 'active' : ''}`}
         onClick={() => {
           handleButtonClick(2);
-          onClickButton2(); 
         }}
       >
         {Text2}
@@ -36,7 +34,7 @@ function ButtonViews({ Text1, Text2, onClickButton1, onClickButton2 }) {
 ButtonViews.propTypes = {
     Text1: PropTypes.string.isRequired,
     Text2: PropTypes.string.isRequired,
-    onClickButton1: PropTypes.func.isRequired,
-    onClickButton2: PropTypes.func.isRequired,
+    onClickButton1: PropTypes.func,
+    onClickButton2: PropTypes.func,
   };
 export default ButtonViews;

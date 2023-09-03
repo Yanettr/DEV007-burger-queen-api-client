@@ -13,6 +13,7 @@ const ProductsOrder = ({ order, onAddToOrder, onRemoveFromOrder, onDeleteFromOrd
   
   return (
     <div className='Container-Order'>
+      {/* Resto del código sin cambios */}
       <ul className='Products-OrderCss'>
         {order.map((product, index) => (
           <li key={index} className='product-Order'>
@@ -22,6 +23,7 @@ const ProductsOrder = ({ order, onAddToOrder, onRemoveFromOrder, onDeleteFromOrd
             </div>
             <h5>{product.quantity}</h5>
             <div className='buttonmenos-small'>
+              {/* Agrega el botón de disminución y su evento onClick */}
               <DecreaseButton onClick={() => onRemoveFromOrder(product)} />
             </div>
             </div>
@@ -29,6 +31,7 @@ const ProductsOrder = ({ order, onAddToOrder, onRemoveFromOrder, onDeleteFromOrd
              <div className='Price-Delete'>
             <h5>${product.price * product.quantity}</h5>
             <div className='buttonEliminar'>
+              {/* Agrega el botón de eliminación y su evento onClick */}
               <DeleteButton onClick={() => onDeleteFromOrder(product)} />
             </div>
             </div>

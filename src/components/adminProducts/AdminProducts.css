@@ -1,0 +1,149 @@
+.body{
+  
+    width: 1024px;
+    height: 768px;
+    background: #CF463F;
+    background-image: url("img/imgfondo.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: -70%;
+}
+
+
+.container-inventario {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container-title-productos {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container-allproducts {
+      background-color: #4d263d;
+      margin: 15px;
+      padding-bottom: 3%;
+      overflow: scroll;
+      height: 65%;
+  }
+  
+  .info-products {
+      padding: 2%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "title-id title-product title-price title-options";
+      font-family: "Metal Mania", cursive;
+      letter-spacing: 10px;
+      color: rgb(255, 255, 255);
+      font-size: 30px;
+      margin-bottom: 10px;
+  }
+  
+  .title-id {
+      grid-area: title-id;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .title-product {
+      grid-area: title-product;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .title-price {
+    grid-area: title-price;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-options {
+      grid-area: title-option;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .container-listproducts {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "productId productName productPrice button-option-product";
+      color: white;
+      font-size: 18px;
+      font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+      margin-bottom: 20px;
+  }
+  
+  .productId {
+      grid-area: productId;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .productName {
+    grid-area: productName;
+    display: flex;
+    justify-content: start;
+    margin-left: 15%;
+  }
+  
+  .productPrice {
+    grid-area: productPrice;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button-option-product {
+    grid-area: button-option-product;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .button-edit-product {
+    background-color: yellow;
+    border: none;
+    padding: 3px;
+    letter-spacing: 1px;
+    width: 120px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  }
+  
+  .button-delete-product {
+      background-color: red;
+      border: none;
+      padding: 3px;
+      letter-spacing: 1px;
+      width: 120px;
+      color: rgb(0, 0, 0);
+      font-size: 15px;
+      font-weight: bolder;
+      font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  }
+  
+  .add-product {
+      background-color: yellow;
+      border: none;
+      padding: 0.5rem 1rem;
+      width: 97%;
+      height: 40px;
+      left: 1.5%;
+      font-weight: bolder;
+      position: relative;
+      justify-content: center;
+      display: flex;
+      font-size: 20px;
+      font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  }
+  

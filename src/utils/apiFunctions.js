@@ -1,10 +1,11 @@
 const stringJSON = "application/json";
 const http = "http://localhost:8080/products";
+const baseURL = "http://localhost:8080/";
 
 /*------------------------------------petición para loguearse---------------------------*/
 export async function loginUser(email, password) {
     try {
-      const response = await fetch(`${http}login`, {
+      const response = await fetch(`${baseURL}login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,7 +25,7 @@ export async function loginUser(email, password) {
       if (data.user) {
         localStorage.setItem("token", data.accessToken);
         localStorage.setItem("role", data.user.role);
-        return true; 
+        return data; 
       } else {
         return false; 
       }
