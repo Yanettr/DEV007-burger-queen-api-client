@@ -2,8 +2,7 @@
 import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-
-import './formLogin.css'
+import '../../pages/login/Login.css';
 
 const FormLogin = ({onFormSubmit}) => {
   const [values, setValues] = React.useState({
@@ -62,6 +61,7 @@ const FormLogin = ({onFormSubmit}) => {
      </section>
     )
 }
+
 
 FormLogin.propTypes = {
     onFormSubmit: PropTypes.func.isRequired, 

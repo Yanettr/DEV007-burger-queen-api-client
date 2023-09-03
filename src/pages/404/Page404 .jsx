@@ -15,7 +15,7 @@ const Page404 = () => {
         <Logo />
       </div>
 
-      <div>
+      <div className='button-error'>
         <Button onClick={() => navigate('/')} variant='danger'>Volver al inicio</Button>
       </div>
     </section>
