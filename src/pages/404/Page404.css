@@ -9,10 +9,15 @@
     background-size: cover;
     text-align: center;
     background-color: rgba(236, 45, 45, 0.8);
-    padding: 136px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    }
+  
 
 .h1 {
   font-size: 2rem;
@@ -20,29 +25,6 @@
   margin-bottom: 20px;
 }
 
-.button-error {
-  width: 347px;
-  height: 73px;
-  flex-shrink: 0;
-  border-radius: 20px;
-  background: #760909;
-  color: #FFF;
-  text-align: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  color: #FFFFFF;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 20px; 
-}
-
-.button-error:hover {
-  background-color: #CC0000;
-}
 
 @media (max-width: 768px) {
   .h1 {

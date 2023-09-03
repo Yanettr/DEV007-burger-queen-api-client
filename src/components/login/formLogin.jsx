@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../pages/login/Login.css';
+import Button from '../button/Button';
 
 const FormLogin = ({onFormSubmit}) => {
   const [values, setValues] = React.useState({
@@ -56,7 +57,7 @@ const FormLogin = ({onFormSubmit}) => {
               />
           </div>
           
-          <button type="submit" className='buttonLogin'>Iniciar sesion</button>
+          <Button type="submit" className='buttonLogin'>Iniciar sesion</Button>
         </form>
      </section>
     )
