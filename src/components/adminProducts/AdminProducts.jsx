@@ -43,26 +43,26 @@ const AdminProducts = () => {
           console.log(error)
         })
     }
-    // se ejecuta getOrders una vez para que la primera llamada sea inmediata y no esperar 5 segundos
+    
     getProducts();
-    // crear un intervalo, donde va la función que trae la petición fetch y luego el tiempo en milisegundos(5 segundos)
+    
     const intervalId = setInterval(getProducts, 2500)
-    //este retorno es opcional del useEffect, evita que se ejecute cuando estoy en otra pantalla o que se pueda duplicar
+
     return () => {
       clearInterval(intervalId)
     };
   }, [token])
-  // //funciones que modifican la data de los trabajadores
+  
   const [modalData, setModalData] = useState({
     modalText: '',
     modalBtnText: '',
     aceptarFn: () => { }
   });
-  //función abre el modal
+
   const openModal = () => {
     setModalIsOpenId(true)
   }
-  //fn que cierra el modal
+
   const closeModal = () => {
     setModalIsOpenId(false)
   }
@@ -86,7 +86,8 @@ const AdminProducts = () => {
 
     console.log('eliminar')
   }
-  // Actualizando la lista trabajadores . 
+  
+  
   const updateProductsData = (item) => {
     setProducts(prevProducts => {
       return prevProducts.map(product => {
@@ -134,7 +135,7 @@ const AdminProducts = () => {
   });
   const addProduct = () => {
     console.log('ADDING Product')
-    //elemento a enviar, trabajador
+  
     const newProduct = {
       name: newProductData.name,
       type: newProductData.type,
@@ -173,8 +174,6 @@ const AdminProducts = () => {
     openModal();
   };
   const handleEditProduct = (product) => {
-    // setModalText('¿Estás seguro que deseas editar al trabajador?');
-    // setModalBtnText('Editar');
     setNewProductData(product);
     setModalData({
       modalText: '¿Estás seguro que deseas EDITAR el producto?',
@@ -188,8 +187,6 @@ const AdminProducts = () => {
     openModal();
   };
   const handleDeleteProduct = (product) => {
-    // setModalText('¿Estás seguro que deseas borrar al trabajador?');
-    // setModalBtnText('Borrar');
     setModalData({
       modalText: '¿Estás seguro que deseas BORRAR el producto?',
       modalBtnText: 'Borrar',
@@ -231,7 +228,6 @@ const AdminProducts = () => {
   
       <div>
       <Link to="/adminUsers">
-        {/* Envuelve el botón con el enlace */}
         <ButtonViews Text1={'PRODUCTOS'} Text2={'USUARIOS'} />
       </Link>
     </div>

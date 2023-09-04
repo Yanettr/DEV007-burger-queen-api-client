@@ -3,7 +3,8 @@
     height: 834px;
 }
 .content-logo-img {
-    height: 200px;
+    height: 80px;
+    width: 80px;
 }
 /* Estilos para celular */
 @media (max-width: 768px) {

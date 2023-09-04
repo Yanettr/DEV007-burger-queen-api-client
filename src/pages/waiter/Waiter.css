@@ -17,21 +17,29 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    background: #CF463F;
+    background:white;
+    padding: 34px;
 }
 
 .extra1{
     background: white;
     width: 55%;
     height: 84%;
-    overflow-y: scroll;
 }
+
+.Products-OrderCss{
+    overflow: auto;
+    width: 400px;
+    height: 340px;
+}
+
 .order {
-    background: white;
+    background: #efedd9;
     width: 50%;
     height: 76%;
-    padding: 30px 10px;
-    overflow: scroll;
+    padding: 19px;
+    overflow: auto;
+    margin: 8px;
 }
 
 .buttonGenerarOrder{
@@ -40,12 +48,12 @@
     border-radius: 20px;
     background: #760909;
     color: #FFF;
-text-align: center;
-font-family: 'Inter', sans-serif;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .button-min{

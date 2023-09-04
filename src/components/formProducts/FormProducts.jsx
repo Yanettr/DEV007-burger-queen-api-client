@@ -9,25 +9,23 @@ const FormProducts = ({ isEditForm, handleAddEditProduct, newProductData, setNew
         handleSubmit,
         formState: { errors },
     } = useForm();
-    //fn que obtiene el valor de email proporcionado en el form
+
     const newProductNameValue = (event) => {
         setNewProductData({ ...newProductData, name: event.target.value })
     };
-    //fn que obtiene el valor del password del formulario
+ 
     const newProductImageValue = (event) => {
         setNewProductData({ ...newProductData, image: event.target.value })
     };
-    //fn que obtiene el valor del price del formulario
+
     const newProductPriceValue = (event) => {
         setNewProductData({ ...newProductData, price: event.target.value })
     };
 
-    //  fn que obtiene los valores de las opciones seleccionadas
     const newProductTypeValue = (selectedOption) => {
         setNewProductData({ ...newProductData, type: selectedOption.value })
     };
     
-    //se crean las constantes para el select de los roles
     const options = [
         { value: 'Desayuno', label: 'Desayuno)' },
         { value: 'Almuerzo', label: 'Almuerzo' },

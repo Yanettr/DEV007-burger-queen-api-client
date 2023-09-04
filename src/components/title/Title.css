@@ -1,19 +1,14 @@
 /* Title.css */
 .title {
    display: flex;
-   flex-direction: row;
    width: 100%;
-   margin-right: 10px;
-    justify-content: center;
-    align-items: center;
+   margin: 10px 0px 44px -22px;
  }
+ 
    h1{
      color: #FFE0AF;
-     text-align: center;
      font-family: 'Nerko One', cursive;
      font-size: 5em;
-     font-style: normal;
-     font-weight: 400;
    }
  
    .logo-title {

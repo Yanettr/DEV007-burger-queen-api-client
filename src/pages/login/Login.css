@@ -4,7 +4,6 @@ body {
     overflow-y: hidden;
 }
 
-/* Estilos base */
 .sectionLogin {
   display: flex;
   flex-direction: column;
@@ -104,8 +103,9 @@ h2 {
 }
 
 .logoLogin img {
-  width: 105%;
-  padding: 30px 35px 27px 0px;
+  width: 400px;
+  padding: 47px 35px 30px 23px;
+  height: 400px;
 }
 
 /* Estilos para dispositivos que no son celulares (tablets y pantallas más grandes) */
