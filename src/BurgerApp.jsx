@@ -5,16 +5,16 @@ import Waiter from "./pages/waiter/Waiter";
 import Admin from "./pages/admin/Admin";
 import Page404 from "./pages/404/Page404 ";
 import Chef from "./pages/chef/chef";
-import Order from "./pages/order/Order";
 import AdminUsers from "./components/adminUsers/AdminUsers";
+import Order from "./pages/order/order";
 
 function BurgerApp() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/Waiter" element={<Waiter />} />
-      <Route path="/Chef" element={<Chef />} /> {/* Cambié la ruta a /Chef */}
-      <Route path="/Order" element={<Order />} /> {/* Nueva ruta para Order */}
+      <Route path="/Chef" element={<Chef />} /> 
+      <Route path="/Order" element={<Order />} /> 
       <Route path="/Admin" element={<Admin />} />
       <Route path="/AdminUsers" element={<AdminUsers />} />
       <Route path="/Page404" element={<Page404 />} />

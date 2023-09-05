@@ -212,17 +212,14 @@ export function getOrder(token) {
       return err;
     });
 }
-export function editOrder(token, uid, status) {
+export function editOrder(token, uid, dataOrder ) {
   return fetch(`${http}orders/${uid}`, {
     method: "PATCH",
     headers: {
       "Content-type": stringJSON,
       'Authorization': `Bearer ${token}`,
     },
-    body: JSON.stringify({
-      status: status,
-      dateProcessed: new Date()
-    }),
+    body: JSON.stringify(dataOrder)
   })
     .then((res) => {
       res;

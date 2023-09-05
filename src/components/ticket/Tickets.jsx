@@ -1,7 +1,34 @@
 import PropTypes from 'prop-types';
 import Button from '../button/Button';
 
-const Ticket = ({order, changeStatus, showButton}) => {
+const Ticket = ({order, changeStatus, showButton, text}) => {
+  const formatoFecha = (dateEntry) => {
+    const orderDate = new Date(dateEntry);
+
+    const opciones = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric"
+    };
+    
+    const formatoFecha = orderDate.toLocaleDateString("es-ES", opciones);
+    return formatoFecha;
+  }
+
+  const getTiempoPreparacion = () => {
+    if (order.dateEntry && order.dataExit) {
+      const fechaA = new Date(order.dateEntry);
+      const fechaB = new Date(order.dataExit);
+      const diferenciaEnMilisegundos = fechaB.getTime() - fechaA.getTime();
+      const minutosDePreparacion = Math.round(diferenciaEnMilisegundos / 1000 / 60);
+      return minutosDePreparacion;
+    }
+    return null;
+  };
+
   return(
     <>
     <div className="ticket-order">
@@ -15,10 +42,11 @@ const Ticket = ({order, changeStatus, showButton}) => {
           </tr>
         </thead>
         <tbody>
+        {console.log("ticket",order.dateEntry)}
           {order.products.map((item, index) => (
             <tr key={index}>
-              <td>{item.quantity}</td>
-              <td>{item.name}</td>
+              <td>{item.qty}</td>
+              <td>{item.product.name}</td>
             </tr>
           ))}
         </tbody>
@@ -26,12 +54,12 @@ const Ticket = ({order, changeStatus, showButton}) => {
       </div>
       <div className='container-orderdate-orderstatus'>
         <div className='order-status'>Estado: {order.status}</div>
-        <div className='order-date'>A cocina: {order.dataEntry}</div>
-        {order.dataExit !== null && <div className='order-date-exit'> T.Preparación: {order.dataExit} min</div>}
+        <div className='order-date'>A cocina: {formatoFecha(order.dateEntry)}</div>
+        {order.dataExit !== null && <div className='order-date-exit'> T.Preparación: {getTiempoPreparacion()} minutos</div>}
       </div>
       <div className="container-btn-add">
         {showButton &&
-        <Button className ="btn-order-ready" text="Preparado" onClick= {() => changeStatus(order)}/>
+        <Button className ="btn-order-ready" text={text}  onClick= {() => changeStatus(order)}/>
         }
       </div>
     </div>
@@ -42,5 +70,6 @@ Ticket.propTypes = {
   order: PropTypes.object,
   changeStatus: PropTypes.func,
   showButton: PropTypes.bool,
+  text: PropTypes.string,
 }
 export default Ticket

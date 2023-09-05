@@ -1,5 +1,4 @@
 import './chef.css';
-import Ticket from '../../components/ticket/Tickets';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {editOrder} from '../../utils/apiFunctions';
@@ -41,26 +40,14 @@ const Chef = () => {
   }, [token]);
 
   const changeStatus = (order) => {
-    const dataEntry = order.dataEntry;
-    const newDataExit = new Date(Date.now()).toLocaleTimeString();
-    const entryTime = new Date(`01/01/2000 ${dataEntry}`);
-    const exitTime = new Date(`01/01/2000 ${newDataExit}`);
-    const minutesDifference = (exitTime - entryTime) / 60000;
+    const newDateExit = new Date().toISOString();
 
     const dataOrder = {
       status: 'delivery',
-      dataExit: minutesDifference,
+      dateExit: newDateExit,
     };
 
-    fetch(`http://localhost:8080/orders/${order.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify(dataOrder),
-    })
-      .then((resp) => {
+    editOrder(token, order.id,dataOrder).then((resp) => {
         if (!resp.ok) {
           throw new Error('Network response was not ok');
         }
@@ -84,7 +71,7 @@ const Chef = () => {
   };
 
   const getProductsList = (products) => {
-    return products.map((item) => `${item.qty} ${item.product.name}`).join(', ');
+    return products.map((item) => `${item.qty} ${item.product.name}`).join('<br>');
   };
 
   const getTotalOrder = (prices) => {
@@ -93,6 +80,21 @@ const Chef = () => {
       0
     );
   };
+  const formatoFecha = (dateEntry) => {
+    const orderDate = new Date(dateEntry);
+
+    const opciones = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric"
+    };
+    
+    const formatoFecha = orderDate.toLocaleDateString("es-ES", opciones);
+    return formatoFecha;
+  }
 
   return (
     <div className='body'>
@@ -114,7 +116,7 @@ const Chef = () => {
                 </tr>
               </thead>
               <tbody>
-                {orders.sort((a, b) => {
+                {orders.filter((order) =>order.status == 'pending').sort((a, b) => {
                     const fechaA = new Date(a.dateEntry);
                     const fechaB = new Date(b.dateEntry);
                     
@@ -128,13 +130,13 @@ const Chef = () => {
                       {order.client}
                     </td>
                     <td>
-                      {getProductsList(order.products)}
+                    <div className="products-list"  dangerouslySetInnerHTML={{__html: getProductsList(order.products)}}></div>
                     </td>
                     <td>
                       {order.status}
                     </td>
                     <td>
-                      {order.dateEntry}
+                      {formatoFecha(order.dateEntry)}
                     </td>
                     <td>
                       ${getTotalOrder(order.products)},00
@@ -143,7 +145,7 @@ const Chef = () => {
                     {order.status == 'pending' && ( //condicional para solo mostrar el boton de actualizar al chef
                       <button
                         className="btnEstado"
-                        onClick={() => editOrder(token, order.id, "delivered")}
+                        onClick={() => changeStatus(order)}
                       >
                         ACTUALIZAR
                       </button>

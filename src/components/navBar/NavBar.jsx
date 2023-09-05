@@ -8,6 +8,7 @@ import './NavBar.css';
 const NavLinks = () => (
   <div className="menu-container">
     <NavLink to="/" className="nav-link">Cerrar Sesión</NavLink>
+    <NavLink to="/Waiter" className="nav-link">Crear Pedido</NavLink>
     <NavLink to="/Order" className="nav-link">Órdenes</NavLink>
   </div>
 );
@@ -19,8 +20,7 @@ const NavBar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // Definir el nombre de archivo de imagen basado en el rol
-  let userImageSrc = '/img/usuario.png'; // Imagen por defecto
+  let userImageSrc = '/img/usuario.png'; 
   if (userRole === 'admin') {
     userImageSrc = '/img/admin.png';
   } else if (userRole === 'chef') {
