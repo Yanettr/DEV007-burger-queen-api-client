@@ -9,23 +9,27 @@
     .button-view {
       width: 260px;
       height: 56px;
-      border-radius: 10px 10px 0px 0px;
-      border: none;
-      background-color: rgb(206, 206, 206);
-      color: rgb(74, 74, 74);
-      border: none;
       padding: 10px 20px;
-      cursor: pointer;
-      font-family: Inter;
-      font-size: 30px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      cursor: pointer;
+      border: whitesmoke;
+      border-radius: 5px;
+      font-family: 'Voltaire', sans-serif;
+      transition: .3s;
+      border: solid 1px whitesmoke;
+      font-size: 31px;
     }
     
     /* Estilos para los botones cuando están activos */
     .button-view.active {
-      background-color: white;
-      color: rgb(0, 0, 0);
+      background-color:  #760909;
+      color: #FFF;
     }
     
+    button:hover {
+      background:dimgrey;
+      color:white;
+      transform: scale(1.1);
+  }

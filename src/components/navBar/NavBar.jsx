@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 
+
+
 const NavLinks = () => (
   <div className="menu-container">
     <NavLink to="/" className="nav-link">Cerrar Sesión</NavLink>
-    <NavLink to="/OrderReady" className="nav-link">Órdenes</NavLink>
+    <NavLink to="/Order" className="nav-link">Órdenes</NavLink>
   </div>
 );
 
@@ -17,7 +19,8 @@ const NavBar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  let userImageSrc = '/img/usuario.png'; 
+  // Definir el nombre de archivo de imagen basado en el rol
+  let userImageSrc = '/img/usuario.png'; // Imagen por defecto
   if (userRole === 'admin') {
     userImageSrc = '/img/admin.png';
   } else if (userRole === 'chef') {

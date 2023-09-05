@@ -19,7 +19,7 @@ const NavBarAdmin = () => {
     <nav className="navbar">
       <div className='nav'>
       <div className="user-navBar">
-        <img src="/img/usuario.png" alt="Logo" className="user-nav"/>
+        <img src="/img/admin.png" alt="Logo" className="user-nav"/>
       </div>
       <button onClick={toggleDropdown} className="dropdown-button">
       </button>
