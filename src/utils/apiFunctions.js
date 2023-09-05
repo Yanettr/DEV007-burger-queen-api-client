@@ -1,5 +1,5 @@
 const stringJSON = "application/json";
-const http = "http://localhost:8080/products";
+const http = "http://localhost:8080/";
 
 /*------------------------------------petición para loguearse---------------------------*/
 export async function loginUser(email, password) {
@@ -24,7 +24,7 @@ export async function loginUser(email, password) {
       if (data.user) {
         localStorage.setItem("token", data.accessToken);
         localStorage.setItem("role", data.user.role);
-        return true; 
+        return data; 
       } else {
         return false; 
       }
@@ -75,7 +75,7 @@ export function deleteUser(id, token) {
   return fetch(`${http}users/${id}`, {
     method: "DELETE",
     headers: {
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
   })
     .then((res) => res.json()) // Devuelve la respuesta JSON
@@ -90,7 +90,7 @@ export function editUser(token, uid, email, password, role) {
     method: "PATCH",
     headers: {
       "Content-type": stringJSON,
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
     body: JSON.stringify({
       email: email,
@@ -106,10 +106,13 @@ export function editUser(token, uid, email, password, role) {
 
 /* Función para obtener información de productos */
 export function getProduct() {
+  const token = localStorage.getItem('accessToken');
+
   return fetch(`${http}products`, {
     method: "GET",
     headers: {
-      "Content-type": stringJSON,
+      'Authorization': `Bearer ${token}`,
+      'Content-type': stringJSON, 
     },
   })
     .then((res) => res.json()) // Devuelve la respuesta JSON
@@ -123,7 +126,7 @@ export function deleteProduct(id, token) {
   return fetch(`${http}products/${id}`, {
     method: "DELETE",
     headers: {
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
   })
     .then((res) => res.json()) // Devuelve la respuesta JSON
@@ -138,7 +141,7 @@ export function editProduct(token, uid, product, price, image, type) {
     method: "PATCH",
     headers: {
       "Content-type": stringJSON,
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
     body: JSON.stringify({
       product: product,
@@ -157,7 +160,7 @@ export function createProduct(token, product, price, image, type) {
     method: "POST",
     headers: {
       "Content-type": stringJSON,
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
     body: JSON.stringify({
       name: product,
@@ -175,23 +178,24 @@ export function createProduct(token, product, price, image, type) {
 /* ----------------------------------------------------Petición para crear Ordenes-----------------------------------------*/ 
 
 
-export function createOrder(token, object) {
+export function createOrder( object) {
+  const token = localStorage.getItem('accessToken');
   return fetch(`${http}orders`, {
     method: "POST",
     headers: {
       "Content-type": stringJSON,
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
     body: JSON.stringify( object ),
   })
     .then((res) => {
-      //console.log(res);
+      console.log(res);
       // console.log(res.statusText)
-       res.json()
+      res
     })
     .catch((err) => {
-      err
-      // console.log(err.message);
+      false
+      console.log(err.message);
     });
 }
 
@@ -199,7 +203,7 @@ export function getOrder(token) {
   return fetch(`${http}orders`, {
     method: "GET",
     headers: {
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
   })
     .then((res) => res.json())
@@ -208,17 +212,14 @@ export function getOrder(token) {
       return err;
     });
 }
-export function editOrder(token, uid, status) {
+export function editOrder(token, uid, dataOrder ) {
   return fetch(`${http}orders/${uid}`, {
     method: "PATCH",
     headers: {
       "Content-type": stringJSON,
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
-    body: JSON.stringify({
-      status: status,
-      dateProcessed: new Date()
-    }),
+    body: JSON.stringify(dataOrder)
   })
     .then((res) => {
       res;
@@ -231,7 +232,7 @@ export function deleteOrder(token, uid) {
   return fetch(`${http}orders/${uid}`, {
     method: "DELETE",
     headers: {
-      Authorization: token,
+      'Authorization': `Bearer ${token}`,
     },
   })
     .then((res) => {

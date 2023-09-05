@@ -4,7 +4,6 @@
     height: 768px;
     background: #CF463F;
     background-image: url("img/imgfondo.png");
-    /*background-image: url("images/fondo.png");*/
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: left;
@@ -12,38 +11,71 @@
 }
 
 .container1 {
-    width: 1024px;
-    height: 600px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 100vh;
+    background:whitesmoke;
+    padding: 34px;
 }
 
 .extra1{
-    background: white;
+    background: whitesmoke;
     width: 55%;
-    height: 58.2%;
+    height: 84%;
 }
+
 .order {
-    background: white;
+    background:#fee2b5;
     width: 50%;
-    height: 51.5%;
-    padding: 30px 10px;
-    overflow: scroll;
+    height: 62%;
+    padding: 19px;
+    overflow: auto;
+    margin: 7px -12px -4px 19px;
 }
 
 .buttonGenerarOrder{
     width: 200px;
-    height: 50px;
+    height: 39px;
     border-radius: 20px;
     background: #760909;
     color: #FFF;
-text-align: center;
-font-family: 'Inter', sans-serif;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    opacity:90%;
+    transform: scale(1.1);
+    transition: .3s;
+    margin:20px 20px 20px 20px;
+    width: 192px;
+  margin: -25px 20px 20px 188px;
+  cursor: pointer;
+}
+
+.buttonGenerarOrder:hover {
+    background-color: black;
+    color:white;
+}
+
+.button-min{
+    height: 34px;
+    width: max-content;
+    flex-shrink: 0;
+    border-radius: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: #760909;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 900;
+}
+tr{
+    height: 40px;
 }

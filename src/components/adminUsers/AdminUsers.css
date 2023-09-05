@@ -1,0 +1,171 @@
+.container-administrador {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container-title-employe {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container-employed {
+    background-color: #4d263d;
+    height: 60%;
+    margin: 15px;
+    padding-bottom: 3%;
+    position: relative;
+    overflow: auto;
+    scrollbar-color: #ffd930 #303030;
+  }
+  
+  .info-employe {
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "title-name title-role title-option";
+    font-family: "Metal Mania", cursive;
+    letter-spacing: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+  
+  .title-name {
+    grid-area: title-name;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-role {
+    grid-area: title-role;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-option {
+    grid-area: title-option;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container-users {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "employeName role button-option-employe";
+    color: white;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .employeName {
+    grid-area: employeName;
+    display: flex;
+    justify-content: start;
+    margin-left: 15%;
+  }
+  
+  .role {
+    grid-area: role;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button-option-employe {
+    grid-area: button-option-employe;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .button-edit-employe {
+    background-color: yellow;
+    border: none;
+    padding: 3px;
+    letter-spacing: 1px;
+    width: 120px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  }
+  
+  .button-delete-employe {
+    background-color: red;
+    border: none;
+    padding: 3px;
+    letter-spacing: 1px;
+    width: 120px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  }
+  
+  .add-employe {
+    background-color: yellow;
+    border: none;
+    padding: 0.5rem 1rem;
+    width: 97%;
+    height: 40px;
+    left: 1.5%;
+    font-weight: bolder;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  }
+  
+  
+  h5 {
+    margin: 15px 0px 1px 0px;
+  }
+  
+  .constainer-user{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .info-users {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F0F0F0;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+  }
+  
+  p {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .info-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #F0F0F0;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+  }
+  
+  .User-edit {
+    margin: 0px 85px;
+  }
+  
+  .User-delete {
+  margin: 0px 85px;
+  }
+  
+  .constent-admin-children{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  }

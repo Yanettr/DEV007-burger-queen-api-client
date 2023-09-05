@@ -1,12 +1,19 @@
 .inputName {
-    width: 200px;
-    height: 20px;
-    border: none;
+    height: 36px;
+    border-block-end: none;
     background-color: #fff;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Voltaire', sans-serif;
     font-size: 20px;
-    font-weight: 500;
-    border-bottom: 2px solid #666;
-    color: rgb(0, 0, 0);
-    padding-left: 10px;
+    width: 66%;
+}
+
+label{
+    font-family: 'Voltaire', sans-serif;
+    font-size: 20px;
+    margin-top: 1%;
+  }
+
+.customer-input{
+    display: flex;
+    justify-content: center;
 }

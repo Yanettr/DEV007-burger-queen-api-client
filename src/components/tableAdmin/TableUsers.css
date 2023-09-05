@@ -1,0 +1,70 @@
+
+.btn-add-user {
+    width: 261px;
+    height: 45px;
+    border-radius: 10px;
+    background: #760909;
+    color: rgb(255, 255, 255);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin: 20px 20px 20px 671px;
+    }
+    button:hover {
+        border-color: #D6C288;
+      }
+
+  .new-container-btn-add{
+      margin:0%;
+      background-color: white;
+   }
+
+  .table-subtitles{
+    background-color:white; 
+  }
+   
+  .dashboard-products-image{
+    height: 30px;
+    width: 30px
+}
+.container-btn-admin-workers-products{
+    height: 50px;
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+}
+.btn-admin-workers{
+    background-color: rgb(205, 205, 199);
+    color: rgb(23, 1, 1);
+}
+.TableCell{
+    font-family: 'Playfair Display', serif;
+    background-color: rgb(186, 178, 178);
+}
+.dashboard-table-row,.container-edit-icon,.container-delete-icon{
+    border: none;
+    border-bottom: 1px solid rgb(240, 236, 233);
+}
+
+.table-dashboard-workers th {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    border: none;
+    height: 35px;
+  }
+
+  .container-dashboard-btnAddWorker{
+    height: 78%;
+    background: #cf463f;
+  }
+
+  .new-container {
+    background-color: white;
+    height: 96%;
+    overflow-y: scroll;
+  }

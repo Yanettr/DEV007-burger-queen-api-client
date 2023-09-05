@@ -9,3 +9,15 @@ body {
 h1,h2{
   margin: 0px;
 }
+
+
+/* Estilos para celular */
+@media (max-width: 768px) {
+ #root {
+    overflow-y: scroll;
+  }
+  .button {
+    font-size: 1em;
+    height: 48px;
+  }
+}

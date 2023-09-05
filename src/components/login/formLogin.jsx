@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../pages/login/Login.css';
-import Button from '../button/Button';
+import ButtonSubmit from '../buttonSubmit/ButtonSubmit';
 
 const FormLogin = ({onFormSubmit}) => {
   const [values, setValues] = React.useState({
@@ -57,7 +56,7 @@ const FormLogin = ({onFormSubmit}) => {
               />
           </div>
           
-          <Button type="submit" className='buttonLogin'>Iniciar sesion</Button>
+          <ButtonSubmit type="submit" className='buttonLogin'>Iniciar sesion</ButtonSubmit>
         </form>
      </section>
     )
