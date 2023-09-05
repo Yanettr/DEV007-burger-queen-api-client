@@ -27,24 +27,18 @@
     height: 84%;
 }
 
-.Products-OrderCss{
-    overflow: auto;
-    width: 400px;
-    height: 340px;
-}
-
 .order {
-    background: #efedd9;
+    background:#fee2b5;
     width: 50%;
-    height: 76%;
+    height: 62%;
     padding: 19px;
     overflow: auto;
-    margin: 8px;
+    margin: 7px -12px -4px 19px;
 }
 
 .buttonGenerarOrder{
     width: 200px;
-    height: 50px;
+    height: 39px;
     border-radius: 20px;
     background: #760909;
     color: #FFF;
@@ -54,6 +48,18 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    opacity:90%;
+    transform: scale(1.1);
+    transition: .3s;
+    margin:20px 20px 20px 20px;
+    width: 192px;
+  margin: -25px 20px 20px 188px;
+  cursor: pointer;
+}
+
+.buttonGenerarOrder:hover {
+    background-color: black;
+    color:white;
 }
 
 .button-min{

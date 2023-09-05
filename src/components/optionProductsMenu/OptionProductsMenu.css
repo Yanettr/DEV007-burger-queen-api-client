@@ -1,13 +1,13 @@
 .optionProducts {
-    justify-content: flex-start;
-    background-color: white;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    overflow-y: auto;
-    margin: 7px 0px 0px -14px;
-    width: 471px;
-    height: 453px;
+  justify-content: flex-start;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  overflow-y: auto;
+  margin: 14px 0px 0px -23px;
+  width: 551px;
+  height: 506px;
   }
  
   
@@ -16,18 +16,27 @@
   }
   
   .product-item {
-      background-color: #FFE0AF;
-      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
-      border: 1px solid #ccc;
-      width: 189px;
-      height: 118px;
-      margin: 10px 20px;
-      display: flex;
-      flex-direction: row;
-      align-content: center;
-      border-radius: 20px;
+    width: 151px;
+    height: 128px;
+    margin: 16px 46px;
+    flex-direction: row;
+    align-content: center;
+    border-radius: 21px;
+    font-family: 'Voltaire', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    padding: 19px 1px 20px 39px;
+    opacity: 90%;
+    transform: scale(1.1);
+    transition: .3s;
+    background-color: #FFE0AF;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+    border: 1px solid #ccc;
+    margin: 30px 22px;
+    display: flex;
+    font-size: 18px;
   }
-    
+
     .ImgProducts{
       width: 30%;
       display: flex;
@@ -43,10 +52,12 @@
       margin-top: 20px;
     }
     .product-image {
-      max-width: 100%;
-      height: auto;
-    }
-  
+      width: 181%;
+      height: 70%;
+      margin-top: 4px;
+      margin-left: -39px;
+}
+   
     .buttonmas {
       width: 40px;
       height: 40px;
@@ -57,8 +68,3 @@
       justify-content: center;
       margin-top: 13%;
   }
-
-  i{
-    background-color: blue;
-  }
-  
