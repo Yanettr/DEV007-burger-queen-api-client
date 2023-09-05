@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import AdminHeader from '../adminHeader/AdminHeader';
 import FormUsers from '../../components/formUsers/FormUsers';
-import ModalApp from '../modal/ModalApp';
+import ModalApp from '../modal/Modal';
 import ButtonViews from '../buttonView/ButtonView';
 import TableUsers from '../TableAdmin/TableUsers';
 

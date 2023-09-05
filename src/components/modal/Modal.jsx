@@ -1,30 +1,29 @@
 import ReactModal from 'react-modal';
 import { PropTypes } from 'prop-types';
-import { customStyles, ContainerButtonModal } from './ModalStyles.jsx';
-
+import './modalCustom.css'; 
 
 ReactModal.setAppElement('#root');
 
-const ModalApp = ({ isOpen, onRequestClose, handleClickModal, text, textBtn, children }) => {
-
+const Modal = ({ isOpen, onRequestClose, handleClickModal, text, textBtn, children }) => {
   return (
     <ReactModal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="ModalApp"
-      style={customStyles}
+      className="custom-modal" 
+      overlayClassName="overlay" 
     >
       <h1 className='modal-text'>{text}</h1>
       {textBtn !== 'Borrar' && children}
-      <ContainerButtonModal className='container-btn-modal-accept-cancel'>
+      <div className='container-btn-modal-accept-cancel'>
         {textBtn === 'Borrar' && <button className='btn-accept' onClick={handleClickModal}>{textBtn}</button>}
         <button className='btn-cancel' onClick={onRequestClose}>Cancelar</button>
-      </ContainerButtonModal>
+      </div>
     </ReactModal>
   );
 };
 
-ModalApp.propTypes = {
+Modal.propTypes = {
   isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func,
   children: PropTypes.object,
@@ -32,4 +31,5 @@ ModalApp.propTypes = {
   text: PropTypes.string,
   textBtn: PropTypes.string
 }
-export default ModalApp;
+
+export default Modal;

@@ -32,17 +32,19 @@
     height: 65px;
   }
   .nav-link{
-    width: 140px;
-    height: 46.912px;
-    border-radius: 10px;
-    background: #CF463F;
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0); /* Color predeterminado del texto */
-  text-decoration: none;
-  margin-right: 20px;
+    width: 260px;
+    height: 56px;
+    padding: 10px 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    border: whitesmoke;
+    border-radius: 5px;
+    font-family: 'Voltaire', sans-serif;
+    transition: .3s;
+    border: solid 1px whitesmoke;
+    font-size: 31px;
   }
   .dropdown-button {
     width: 52.847px;
@@ -64,4 +66,9 @@
     width: 100%;
     height: auto;
     padding: 0px;
+  }
+
+  .nav-link.active {
+    background-color: #760909;
+    color: #FFF;
   }

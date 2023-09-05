@@ -1,263 +1,237 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminHeader from '../adminHeader/AdminHeader';
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './adminProducts.css';
-import { Link } from 'react-router-dom';
 import ButtonViews from '../buttonView/ButtonView';
-import ModalApp from '../modal/ModalApp';
+import ModalApp from '../modal/Modal';
 import FormProducts from '../formProducts/FormProducts';
 import TableProducts from '../TableAdmin/TableProducts';
 
-
 const AdminProducts = () => {
-  const [products, setProducts] = useState([]);
-  const [selectedProductType, setSelectedProductType] = useState('Usuarios'); // Agregado
-  const [modalIsOpenId, setModalIsOpenId] = useState(false);
   const navigate = useNavigate();
-  
-  const logOut=()=>{
-    sessionStorage.clear();
-    navigate('/')
-  }
+  const authToken = localStorage.getItem('accessToken');
 
+  const [productList, setProductList] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProductType, setSelectedProductType] = useState('Productos');
+  const [modalData, setModalData] = useState({
+    text: '',
+    buttonText: '',
+    action: () => {},
+  });
+  const [newProduct, setNewProduct] = useState({
+    name: '',
+    type: '',
+    image: '',
+    price: '',
+  });
+  const [isEditing, setIsEditing] = useState(true);
 
-  const token = localStorage.getItem('accessToken');
-  //variable que se crea al presionar el boton de chef cuando el pedido está listo
   useEffect(() => {
-    function getProducts() {
+    function fetchProducts() {
       fetch('http://localhost:8080/products', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'authorization': `Bearer ${token}`,
-        }
+          'authorization': `Bearer ${authToken}`,
+        },
       })
         .then((resp) => resp.json())
         .then((dataProducts) => {
-          // console.log(dataOrders);
-          setProducts(dataProducts);
+          setProductList(dataProducts);
         })
         .catch(error => {
           console.log(error)
         })
     }
     
-    getProducts();
+    fetchProducts();
     
-    const intervalId = setInterval(getProducts, 2500)
+    const intervalId = setInterval(fetchProducts, 2500)
 
     return () => {
       clearInterval(intervalId)
     };
-  }, [token])
-  
-  const [modalData, setModalData] = useState({
-    modalText: '',
-    modalBtnText: '',
-    aceptarFn: () => { }
-  });
+  }, [authToken]);
 
   const openModal = () => {
-    setModalIsOpenId(true)
+    setIsModalOpen(true);
   }
 
   const closeModal = () => {
-    setModalIsOpenId(false)
+    setIsModalOpen(false);
   }
-  const deleteProduct = (product) => {
-    console.log('eliminar')
-    console.log('HOLA', product.id)
-    fetch(`http://localhost:8080/products/${product.id}`, {
 
+  const deleteProduct = (product) => {
+    fetch(`http://localhost:8080/products/${product.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        'authorization': `Bearer ${token}`,
+        'authorization': `Bearer ${authToken}`,
       },
-
     })
       .then((resp) => resp.json())
-      .then((product) => {
-        updateProductsData(product)
+      .then((deletedProduct) => {
+        updateProductList(deletedProduct)
       })
       .catch(error => console.log(error))
-
-    console.log('eliminar')
   }
-  
-  
-  const updateProductsData = (item) => {
-    setProducts(prevProducts => {
-      return prevProducts.map(product => {
-        if (product.id === item.id) {
-          return {product};
+
+  const updateProductList = (updatedItem) => {
+    setProductList(prevProductList => {
+      return prevProductList.map(product => {
+        if (product.id === updatedItem.id) {
+          return { ...product, ...updatedItem };
         }
         return product;
       });
     });
   };
-  const [editProductData, setEditProductData] = useState({
-    name: '',
-    type: '',
-    image: '',
-    price: '',
-  });
 
   const editProduct = (product) => {
-    console.log('editar', product)
-    const editProduct = {
+    const updatedProduct = {
       name: product.name,
       type: product.type,
-      image:product.image,
+      image: product.image,
       price: product.price,
-     
     };
+
     fetch(`http://localhost:8080/products/${product.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        'authorization': `Bearer ${token}`,
+        'authorization': `Bearer ${authToken}`,
       },
-      body: JSON.stringify(editProduct),
+      body: JSON.stringify(updatedProduct),
     })
-      .then(() => {
-
-      })
-
+      .then(() => {})
   }
-  const [newProductData, setNewProductData] = useState({
-    name: '',
-    type: '',
-    image: '',
-    price: ''
-  });
+
   const addProduct = () => {
-    console.log('ADDING Product')
-  
-    const newProduct = {
-      name: newProductData.name,
-      type: newProductData.type,
-      image: newProductData.image,
-      price: newProductData.price
+    const newProductData = {
+      name: newProduct.name,
+      type: newProduct.type,
+      image: newProduct.image,
+      price: newProduct.price,
     };
+
     fetch('http://localhost:8080/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'authorization': `Bearer ${token}`,
+        'authorization': `Bearer ${authToken}`,
       },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(newProductData),
     })
       .then(() => {
-        setNewProductData({
+        setNewProduct({
           name: '',
           type: '',
           image: '',
-          price: ''
+          price: '',
         });
-      })
+      });
   }
+
   const handleAddProduct = () => {
-    console.log('Abrir el modal');
-    setNewProductData({
+    setNewProduct({
       name: '',
       type: '',
       image: '',
-      price: ''
+      price: '',
     });
+
     setModalData({
-      modalText: '¿Estás seguro que deseas AGREGAR un producto?',
-      modalBtnText: 'Agregar'
+      text: '¿Estás seguro que deseas AGREGAR un producto?',
+      buttonText: 'Agregar',
     });
+
     openModal();
-  };
+  }
+
   const handleEditProduct = (product) => {
-    setNewProductData(product);
+    setNewProduct(product);
     setModalData({
-      modalText: '¿Estás seguro que deseas EDITAR el producto?',
-      modalBtnText: 'Editar',
-      aceptarFn: () => {
-        setNewProductData(product);
+      text: '¿Estás seguro que deseas EDITAR el producto?',
+      buttonText: 'Editar',
+      action: () => {
+        setNewProduct(product);
         editProduct(product);
         closeModal();
-      }
+      },
     });
     openModal();
-  };
+  }
+
   const handleDeleteProduct = (product) => {
     setModalData({
-      modalText: '¿Estás seguro que deseas BORRAR el producto?',
-      modalBtnText: 'Borrar',
-      aceptarFn: () => {
-        deleteProduct(product)
+      text: '¿Estás seguro que deseas BORRAR el producto?',
+      buttonText: 'Borrar',
+      action: () => {
+        deleteProduct(product);
         closeModal();
-      }
+      },
     });
     openModal();
-  };
-  const [showEditForm, setShowEditForm] = useState(true)
+  }
 
   const handleAddEditProduct = (product) => {
-    if (showEditForm) {
+    if (isEditing) {
       editProduct(product);
       closeModal();
-      setEditProductData({
+      setNewProduct({
         name: '',
         type: '',
         image: '',
-        price: ''
+        price: '',
       });
-
-    }
-    else {
+    } else {
       addProduct();
       closeModal();
-      setNewProductData({
+      setNewProduct({
         name: '',
         type: '',
         image: '',
-        price: ''
+        price: '',
       });
     }
   }
+
   return (
     <div className='body'>
       <AdminHeader title='ADMIN' />
-  
       <div>
-      <Link to="/adminUsers">
-        <ButtonViews Text1={'PRODUCTOS'} Text2={'USUARIOS'} />
-      </Link>
-    </div>
-
+        <Link to="/adminUsers">
+          <ButtonViews Text1={'PRODUCTOS'} Text2={'USUARIOS'} />
+        </Link>
+      </div>
       <div className='container-dashboard-btnAddWorker'>
         <TableProducts
-          setShowEditForm={setShowEditForm}
-          products={products}
+          setShowEditForm={setIsEditing}
+          products={productList}
           openModal={openModal}
           closeModal={closeModal}
-          modalIsOpen={modalIsOpenId}
+          modalIsOpen={isModalOpen}
           handleAddProduct={handleAddProduct}
           handleDeleteProduct={handleDeleteProduct}
           handleEditProduct={handleEditProduct}
         />
       </div>
       <ModalApp
-        isOpen={modalIsOpenId}
+        isOpen={isModalOpen}
         onRequestClose={closeModal}
-        handleClickModal={modalData.aceptarFn}
-        text={modalData.modalText}
-        textBtn={modalData.modalBtnText}
+        handleClickModal={modalData.action}
+        text={modalData.text}
+        textBtn={modalData.buttonText}
       >
         <FormProducts
           handleAddEditProduct={handleAddEditProduct}
-          newProductData={newProductData}
-          setNewProductData={setNewProductData}
-          handleClickModal={modalData.aceptarFn}
+          newProductData={newProduct}
+          setNewProductData={setNewProduct}
+          handleClickModal={modalData.action}
           closeModal={closeModal}
-          isEditForm={showEditForm}
+          isEditForm={isEditing}
         />
       </ModalApp>
     </div>
