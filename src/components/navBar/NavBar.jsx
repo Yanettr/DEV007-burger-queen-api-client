@@ -6,10 +6,10 @@ import './NavBar.css';
 
 
 const NavLinks = () => (
-  <div className="menu-container">
-    <NavLink to="/" className="nav-link">Cerrar Sesión</NavLink>
-    <NavLink to="/Waiter" className="nav-link">Crear Pedido</NavLink>
-    <NavLink to="/Order" className="nav-link">Órdenes</NavLink>
+  <div className="menus-container">
+    <NavLink to="/" className="nav-links">Cerrar Sesión</NavLink>
+    <NavLink to="/Waiter" className="nav-links">Crear Pedido</NavLink>
+    <NavLink to="/Order" className="nav-links">Órdenes</NavLink>
   </div>
 );
 

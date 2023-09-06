@@ -19,9 +19,9 @@ const Ticket = ({order, changeStatus, showButton, text}) => {
   }
 
   const getTiempoPreparacion = () => {
-    if (order.dateEntry && order.dataExit) {
+    if (order.dateEntry && order.dateExit) {
       const fechaA = new Date(order.dateEntry);
-      const fechaB = new Date(order.dataExit);
+      const fechaB = new Date(order.dateExit);
       const diferenciaEnMilisegundos = fechaB.getTime() - fechaA.getTime();
       const minutosDePreparacion = Math.round(diferenciaEnMilisegundos / 1000 / 60);
       return minutosDePreparacion;
@@ -55,7 +55,7 @@ const Ticket = ({order, changeStatus, showButton, text}) => {
       <div className='container-orderdate-orderstatus'>
         <div className='order-status'>Estado: {order.status}</div>
         <div className='order-date'>A cocina: {formatoFecha(order.dateEntry)}</div>
-        {order.dataExit !== null && <div className='order-date-exit'> T.Preparación: {getTiempoPreparacion()} minutos</div>}
+        {order.dateExit !== null && <div className='order-date-exit'> T.Preparación: {getTiempoPreparacion()} minutos</div>}
       </div>
       <div className="container-btn-add">
         {showButton &&

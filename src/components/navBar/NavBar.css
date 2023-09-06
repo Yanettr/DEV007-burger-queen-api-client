@@ -34,20 +34,20 @@
   }
   
   /* Estilos para el menú desplegable */
-  .menu-container {
+  .menus-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #FFE0AF;
     border-radius: 10px;
+    width: 150px;
+    height: 145px;
     margin-top: -40px;
     z-index: 2;
-    width: 148px;
-    height: 63px;
 
   }
 
-  .nav-link{
+  .nav-links{
     width: 140px;
     height: 46.912px;
     border-radius: 10px;
@@ -57,8 +57,8 @@
     justify-content: center;
     align-items: center;
     color: rgb(0, 0, 0); /* Color predeterminado del texto */
-    text-decoration: none;
-    margin-right: 20px;
+  text-decoration: none;
+  margin-right: 20px;
   }
   
   .dropdown-button {
