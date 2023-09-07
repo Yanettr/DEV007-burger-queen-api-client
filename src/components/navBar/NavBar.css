@@ -34,33 +34,34 @@
   }
   
   /* Estilos para el menú desplegable */
-  .menu-container {
+  .menus-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #FFE0AF;
     border-radius: 10px;
+    width: 150px;
+    height: 145px;
     margin-top: -40px;
     z-index: 2;
-    width: 148px;
-    height: 63px;
 
   }
 
-  .nav-link{
+  .nav-links{
     width: 140px;
     height: 46.912px;
     border-radius: 10px;
     background: #CF463F;
+    text-decoration: none;
     margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(0, 0, 0); /* Color predeterminado del texto */
-    text-decoration: none;
+    color: rgb(0, 0, 0); 
+    border-radius: 8px;
     margin-right: 20px;
   }
-  
+
   .dropdown-button {
     width: 52.847px;
     height: 53.797px;
@@ -69,9 +70,17 @@
     border: none;
     cursor: pointer;
     background-image: url("img/menu.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: right-bottom;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-size: 0px;
+    background: transparent;
+    cursor: pointer;
   }
   
   .user-navBar{

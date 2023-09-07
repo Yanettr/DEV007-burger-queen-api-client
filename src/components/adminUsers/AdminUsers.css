@@ -107,21 +107,7 @@
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
   }
   
-  .add-employe {
-    background-color: yellow;
-    border: none;
-    padding: 0.5rem 1rem;
-    width: 97%;
-    height: 40px;
-    left: 1.5%;
-    font-weight: bolder;
-    position: relative;
-    justify-content: center;
-    display: flex;
-    font-size: 20px;
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-  }
-  
+
   
   h5 {
     margin: 15px 0px 1px 0px;

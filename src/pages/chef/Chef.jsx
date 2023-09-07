@@ -1,7 +1,9 @@
-import './chef.css';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {editOrder} from '../../utils/apiFunctions';
+import './chef.css'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import {editOrder} from '../../utils/apiFunctions'
+import Header from '../../components/header/Header'
+import ButtonView from '../../components/buttonView/ButtonView'
 
 const Chef = () => {
   const [orders, setOrders] = useState([]);
@@ -98,9 +100,15 @@ const Chef = () => {
 
   return (
     <div className='body'>
-      <section className='title-chef-orders'>
-        <h1 className='title-orders'>Ordenes</h1>
-      </section>
+      <Header title='ORDENES' />
+
+<div>
+<Link to="/Waiter">
+  {/* Envuelve el botón con el enlace */}
+  <ButtonView Text1={'CREAR PEDIDOS'} Text2={'ORDENES'} />
+</Link>
+
+</div>
       <section className='container-cooking'>
         <div className='container-orders-table'>
           <table className='orders-table'>
@@ -157,9 +165,11 @@ const Chef = () => {
               </tbody>
           </table> 
         </div>
+        <div className ='logo-out'>
         <Link to="/">
-          <img src="/src/assets/flechas.png" alt="" className="botton-back-chef" />
+          <img src="/src/assets/out.png" alt="" className="botton-back-chef" />
         </Link>
+        </div>
         <div>
         </div>
       </section>

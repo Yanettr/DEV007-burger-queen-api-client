@@ -10,17 +10,17 @@
       width: 260px;
       height: 56px;
       padding: 10px 20px;
-      font-style: normal;
-      font-weight: 400;
       line-height: normal;
       cursor: pointer;
-      border: whitesmoke;
-      border-radius: 5px;
       font-family: 'Voltaire', sans-serif;
       transition: .3s;
       border: solid 1px whitesmoke;
-      font-size: 31px;
-    }
+      font-size: 24px;
+      text-decoration: none;
+      color: rgb(9, 9, 9);
+      border-radius: 8px;
+}
+
     
     /* Estilos para los botones cuando están activos */
     .button-view.active {
@@ -29,7 +29,6 @@
     }
     
     button:hover {
-      background:dimgrey;
       color:white;
       transform: scale(1.1);
   }

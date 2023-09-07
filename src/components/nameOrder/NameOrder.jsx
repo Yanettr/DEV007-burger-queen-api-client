@@ -6,12 +6,12 @@ import './NameOrder.css'
 const NameOrder = ({ customerName, onCustomerNameChange }) => {
   return (
     <div className='customer-input'>
-      <label htmlFor='customerName'>Nombre del Cliente:</label>
+      <label htmlFor='customerName'>Datos del Cliente:</label>
       <input
       className='inputName'
         type='text'
         id='customerName'
-        placeholder='Ej: Luisa Martinez'
+        placeholder='Ej: Luisa Mesa 2'
         value={customerName}
         onChange={(e) => onCustomerNameChange(e.target.value)}
       />

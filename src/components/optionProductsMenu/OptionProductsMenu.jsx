@@ -10,18 +10,16 @@ const OptionsProductsMenu = ({ onAddToOrder, productType }) => {
 
   useEffect(() => {
     if (productType === 'Pedidos') {
-      // Si el tipo de producto es "Pedidos," obtén los pedidos en lugar de productos.
+
       getOrder()
         .then((data) => {
-          // Aquí debes procesar los datos de los pedidos y establecerlos en el estado.
-          // Supongamos que los datos están en un formato similar al de productos.
           setProducts(data);
         })
         .catch((error) => {
           console.error('Error fetching orders:', error);
         });
     } else {
-      // Si el tipo de producto no es "Pedidos," obtén productos como antes.
+
       getProduct()
         .then((data) => {
           const filteredProducts = data.filter((product) => product.type === productType);

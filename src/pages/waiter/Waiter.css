@@ -1,5 +1,4 @@
 .body{
-  
     width: 1024px;
     height: 768px;
     background: #CF463F;
@@ -27,12 +26,18 @@
 }
 
 .order {
-    background:#fee2b5;
+  
     width: 50%;
     height: 62%;
     padding: 19px;
     overflow: auto;
     margin: 7px -12px -4px 19px;
+    background-color: #f5f5f5;
+    width: 411px;
+    min-height: 400px;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .buttonGenerarOrder{

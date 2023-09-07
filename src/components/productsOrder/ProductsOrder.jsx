@@ -13,6 +13,15 @@ const ProductsOrder = ({ order, onAddToOrder, onRemoveFromOrder, onDeleteFromOrd
   
   return (
     <div className='Container-Order'>
+       <table className='table'>
+        <thead>
+          <tr>
+            <th scope='col'>Nombre</th>
+            <th scope='col'>Precio</th>
+            <th scope='col'>Cantidad</th>
+            <th scope='col'>Eliminar</th>
+          </tr>
+          </thead>
       {/* Resto del código sin cambios */}
       <ul className='Products-OrderCss'>
         {order.map((product, index) => (
@@ -41,6 +50,7 @@ const ProductsOrder = ({ order, onAddToOrder, onRemoveFromOrder, onDeleteFromOrd
       <div className='total'>
         <h3>Total del Pedido: ${total.toFixed(2)}</h3>
       </div>
+      </table>
     </div>
   );
 };

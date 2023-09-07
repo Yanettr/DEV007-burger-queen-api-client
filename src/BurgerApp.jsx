@@ -17,7 +17,7 @@ function BurgerApp() {
       <Route path="/Order" element={<Order />} /> 
       <Route path="/Admin" element={<Admin />} />
       <Route path="/AdminUsers" element={<AdminUsers />} />
-      <Route path="/Page404" element={<Page404 />} />
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 }

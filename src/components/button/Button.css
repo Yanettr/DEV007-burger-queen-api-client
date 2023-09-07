@@ -1,20 +1,20 @@
 .button {
-  height: 54px;
-  width: 211px;
-  border-radius: 20px;
-  background: #760909;
-  color: #FFF;
-  text-align: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  display: inline-block;
+  width: 260px;
+  height: 56px;
+  padding: 10px 20px;
   line-height: normal;
-  padding: 5px;
-  margin: 15px 0px 2px 18px;
-  text-transform: uppercase;
-
+  cursor: pointer;
+  transition: .3s;
+  border: solid 1px whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  color:whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(237, 242, 246, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  margin: 10px 5px 34px 2px;
 }
-  .button:hover {
-    background-color: #7609098c
-  }
-  
- 
+
+
