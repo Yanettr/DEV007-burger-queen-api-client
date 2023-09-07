@@ -1,29 +1,31 @@
 
-  .container-order-status {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 20px;
-  }
+ .ticket-order{
+  background-color: #eef1f6;
+  width: 84%;
+  height: 69%;
+  margin: 50px 0px 70px 16px;
+  padding: 7%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(115, 96, 113, 0.5);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+  font-size: 13px;
+ }
 
 
-  .container-order-ticket-status {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
+ .container-order-ticket-status {
 
-  .ticket {
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    width: 300px;
-  }
+  justify-content: flex-start;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  overflow-y: auto;
+  width: 1048px;
+  height: 506px;
+}
+
   
   .ticket-header {
     font-weight: bold;
@@ -35,13 +37,23 @@
     margin-bottom: 10px;
   }
   
-  .button-entregar {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+.button-entregar {
+ display: inline-block;
+  height: 47px;
+  width: 158px;
+  padding: 10px 20px;
+  line-height: normal;
+  border: solid 1px #f8f2f2;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(237, 242, 246, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  margin: 49px 0px 7px 44px;
+  background: #c43e38;
+  color: #efeff6;
+  margin-top: auto;
   }
   
   .button-entregar:hover {

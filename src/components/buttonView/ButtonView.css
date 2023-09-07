@@ -29,6 +29,6 @@
     }
     
     button:hover {
-      color:white;
+      color:rgb(245, 245, 249);
       transform: scale(1.1);
   }
