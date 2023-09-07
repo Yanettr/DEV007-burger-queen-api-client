@@ -1,22 +1,4 @@
-.button {
-    height: 81px;
-    width: max-content;
-    flex-shrink: 0;
-    border-radius: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
-    background: #760909;
-    color: #FFF;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5em;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    margin-top: 40px;
-  }
-
-  .button:hover {
+.button:hover {
     background-color: #7609098c
   }
   

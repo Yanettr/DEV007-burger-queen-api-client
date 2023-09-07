@@ -7,7 +7,7 @@ body {
 .sectionLogin {
   align-items: center;
   width: auto;
-  height: 60%;
+  height: 75%;
   padding: 40px;
   display: grid;
   grid-template-rows: auto;

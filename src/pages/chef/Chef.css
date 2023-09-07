@@ -46,9 +46,9 @@
     text-overflow: ellipsis;
   }
   
-  .buttonsTable {
+  /*.buttonsTable {
     text-align: center;
-  }
+  }*/
   
   .btnEstado {
     background-color: #007bff;
@@ -62,12 +62,12 @@
     background-color: #0056b3;
   }
   
-  .botton-back-chef {
+  /*.botton-back-chef {
     width: 30px;
     height: 30px;
     margin-top: 20px;
     cursor: pointer;
-  }
+  }*/
   
   .chef {
     width: 120px;

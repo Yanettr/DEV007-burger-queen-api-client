@@ -27,23 +27,28 @@
 
 .order {
   
-    width: 50%;
-    height: 62%;
-    padding: 19px;
-    overflow: auto;
-    margin: 7px -12px -4px 19px;
-    background-color: #f5f5f5;
-    width: 411px;
-    min-height: 400px;
-    margin-left: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 74%;
+  padding: 39px;
+  overflow: auto;
+  margin: 7px 7px 0px 0px;
+  background-color: #f5f5f5;
+  width: 411px;
+  min-height: 400px;
+  margin-left: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.container-btn-add{
+    background: #CF463F;
+}
+
+
+
+
 .buttonGenerarOrder{
-    width: 200px;
     height: 39px;
-    border-radius: 20px;
+    border-radius: 10px;
     background: #760909;
     color: #FFF;
     text-align: center;
@@ -52,13 +57,13 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    opacity:90%;
+    opacity: 90%;
     transform: scale(1.1);
     transition: .3s;
-    margin:20px 20px 20px 20px;
     width: 192px;
-  margin: -25px 20px 20px 188px;
-  cursor: pointer;
+    margin: 0px 38px 0px 68px;
+    cursor: pointer;
+    margin-top: auto;
 }
 
 .buttonGenerarOrder:hover {

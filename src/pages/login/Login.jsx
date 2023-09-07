@@ -38,7 +38,7 @@ const Login = () => {
         navigate(route);
       })
       .catch((error) => {
-        console.error("Catch",error); // Puedes imprimir el error en la consola para depuración
+        console.error("Catch",error); 
         Swal.fire({
           title: 'Error!',
           text: 'Datos incorrectos. Por favor, inténtalo nuevamente.',

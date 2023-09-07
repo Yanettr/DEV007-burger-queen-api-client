@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body, #root {
   height: 100%;
   width: 100%;
@@ -9,6 +15,10 @@ body {
 h1,h2{
   margin: 0px;
 }
+a {
+  text-decoration: none;
+}
+
 
 
 /* Estilos para celular */
@@ -16,8 +26,8 @@ h1,h2{
  #root {
     overflow-y: scroll;
   }
-  .button {
+}
+  /*.button {
     font-size: 1em;
     height: 48px;
-  }
-}
+  }*/

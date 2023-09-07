@@ -100,11 +100,11 @@
     justify-content: center;
   }
   
-  .button-option-product {
+  /*.button-option-product {
     grid-area: button-option-product;
     display: flex;
     justify-content: space-around;
-  }
+  }*/
   
   .css-rorn0c-MuiTableContainer-root{
   overflow-x: auto;
