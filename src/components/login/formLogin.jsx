@@ -56,7 +56,7 @@ const FormLogin = ({onFormSubmit}) => {
               />
           </div>
           
-          <ButtonSubmit type="submit" className='buttonLogin'>Iniciar sesion</ButtonSubmit>
+          <ButtonSubmit type="submit" className='buttonLogin'>Iniciar sesión</ButtonSubmit>
         </form>
      </section>
     )

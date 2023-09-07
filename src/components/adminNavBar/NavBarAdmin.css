@@ -31,21 +31,22 @@
     width: 149px;
     height: 65px;
   }
-  .nav-link{
+
+  .button-view {
     width: 260px;
     height: 56px;
     padding: 10px 20px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
     cursor: pointer;
-    border: whitesmoke;
-    border-radius: 5px;
     font-family: 'Voltaire', sans-serif;
     transition: .3s;
     border: solid 1px whitesmoke;
-    font-size: 31px;
-  }
+    font-size: 24px;
+    text-decoration: none;
+    color: rgb(9, 9, 9);
+    border-radius: 8px;
+}
+
   .dropdown-button {
     width: 52.847px;
     height: 53.797px;
