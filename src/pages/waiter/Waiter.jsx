@@ -8,6 +8,9 @@ import ButtonViews from '../../components/buttonView/ButtonView';
 import NameOrder from '../../components/nameOrder/NameOrder';
 import OptionsProductsMenu from '../../components/optionProductsMenu/optionProductsMenu';
 import {createOrder} from '../../utils/apiFunctions';
+import { Link } from 'react-router-dom';
+import backButton from '../../assets/backBtn.png';
+import logoutButton from '../../assets/logout.png';
 
 const Waiter = () => {
   const [order, setOrder] = useState([]);
@@ -119,7 +122,10 @@ console.log(error)
           />
         </div>
         <div className='order'>
-        <NameOrder customerName={customerName} onCustomerNameChange={handleCustomerNameChange} />
+        <NameOrder 
+  customerName={customerName}
+  onCustomerNameChange={handleCustomerNameChange}
+/>
           <ProductsOrder 
           order={order} 
           onAddToOrder={handleAddToOrder} 
@@ -128,9 +134,23 @@ console.log(error)
           <div>
         <button onClick={handleGenerateOrder} className='buttonGenerarOrder'>Generar orden</button>
         </div>
+
         </div>
       </div>
+      <footer>
+          <div className='footer-button'>
+            <Link to='/'>
+              <img src={backButton} alt='Regresar' /> 
+            </Link>
+          </div>
+          <div className='footer-button'>
+            <Link to='/logout'>
+              <img src={logoutButton} alt='Salir' /> 
+            </Link>
+          </div>
+        </footer>
     </div>
+    
   );
 };
 

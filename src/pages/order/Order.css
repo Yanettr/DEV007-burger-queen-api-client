@@ -1,5 +1,4 @@
-
- .ticket-order{
+.ticket-order{
   background-color: #eef1f6;
   width: 84%;
   height: 69%;
@@ -13,9 +12,7 @@
   font-size: 13px;
  }
 
-
  .container-order-ticket-status {
-
   justify-content: flex-start;
   background-color: whitesmoke;
   display: grid;
@@ -26,7 +23,6 @@
   height: 506px;
 }
 
-  
   .ticket-header {
     font-weight: bold;
     font-size: 18px;
@@ -60,21 +56,7 @@
     background-color: #0056b3;
   }
   
-  /* Estilos para el Modal */
-  .modal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-  }
-  
+
   .modal-content {
     background-color: #fff;
     border-radius: 4px;
