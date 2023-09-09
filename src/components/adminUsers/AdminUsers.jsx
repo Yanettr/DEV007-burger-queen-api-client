@@ -32,33 +32,33 @@ import TableUsers from '../TableAdmin/TableUsers';
         })
           .then((resp) => resp.json())
           .then((dataWorkers) => {
-            // console.log(dataOrders);
+
             setWorkers(dataWorkers);
           })
           .catch(error => {
             console.log(error)
           })
       }
-      // se ejecuta getOrders una vez para que la primera llamada sea inmediata y no esperar 5 segundos
+  
       getWorkers();
-      // crear un intervalo, donde va la función que trae la petición fetch y luego el tiempo en milisegundos(5 segundos)
+      
       const intervalId = setInterval(getWorkers, 2500)
-      //este retorno es opcional del useEffect, evita que se ejecute cuando estoy en otra pantalla o que se pueda duplicar
+
       return () => {
         clearInterval(intervalId)
       };
     }, [token])
-    //funciones que modifican la data de los trabajadores
+
     const [modalData, setModalData] = useState({
       modalText: '',
       modalBtnText: '',
       aceptarFn: () => { }
     });
-    //función abre el modal
+
     const openModal = () => {
       setModalIsOpenId(true)
     }
-    //fn que cierra el modal
+
     const closeModal = () => {
       setModalIsOpenId(false)
     }
@@ -82,7 +82,7 @@ import TableUsers from '../TableAdmin/TableUsers';
   
       console.log('eliminar')
     }
-    // Actualizando la lista trabajadores . 
+
     const updateWorkersData = (user) => {
       setWorkers(prevWorkers => {
         return prevWorkers.map(worker => {
@@ -151,6 +151,7 @@ import TableUsers from '../TableAdmin/TableUsers';
     const handleAddWorker = () => {
       console.log('Abrir el modal');
       setNewUserData({
+        name:'',
         email: '',
         password: '',
         role: ''
@@ -162,10 +163,7 @@ import TableUsers from '../TableAdmin/TableUsers';
       openModal();
     };
     const handleEditar = (worker) => {
-      // setModalText('¿Estás seguro que deseas editar al trabajador?');
-      // setModalBtnText('Editar');
       setNewUserData(worker);
-      // setEditUserData(worker);
       setModalData({
         modalText: '¿Estás seguro que deseas EDITAR al trabajador?',
         modalBtnText: 'Editar',
@@ -178,8 +176,7 @@ import TableUsers from '../TableAdmin/TableUsers';
       openModal();
     };
     const handleBorrar = (worker) => {
-      // setModalText('¿Estás seguro que deseas borrar al trabajador?');
-      // setModalBtnText('Borrar');
+
       setModalData({
         modalText: '¿Estás seguro que deseas BORRAR al trabajador?',
         modalBtnText: 'Borrar',
@@ -213,49 +210,53 @@ import TableUsers from '../TableAdmin/TableUsers';
       }
     }
     return (
-      
-          <div className='body'>
+      <div className='body'>
       <AdminHeader title='ADMIN' />
 
-      <div>
-      <Link to="/admin">
-        {/* Envuelve el botón con el enlace */}
-        <ButtonViews Text1={'PRODUCTOS'} Text2={'USUARIOS'} />
-      </Link>
-    </div>
-   
-   
-        <div className='container-dashboard-btnAddWorker'>
-          <TableUsers
-            setShowEditForm={setShowEditForm}
-            workers={workers}
-            openModal={openModal}
-            closeModal={closeModal}
-            modalIsOpen={modalIsOpenId}
-            handleAddWorker={handleAddWorker}
-            handleBorrar={handleBorrar}
-            handleEditar={handleEditar}
-         
-            />
-        </div>
-        <ModalApp
-          isOpen={modalIsOpenId}
-          onRequestClose={closeModal}
+      <div className='conteiner-button'>
+        {token ? (
+          <Link to="/admin">
+            <ButtonViews Text1={'PRODUCTOS'} Text2={'USUARIOS'} Text3={'SALIR'} />
+          </Link>
+        ) : (
+          <button onClick={logOut}>Salir</button>
+        )}
+      </div>
+
+      <div className='container-dashboard-btnAddWorker'>
+        <TableUsers
+          setShowEditForm={setShowEditForm}
+          workers={workers}
+          openModal={openModal}
+          closeModal={closeModal}
+          modalIsOpen={modalIsOpenId}
+          handleAddWorker={handleAddWorker}
+          handleBorrar={handleBorrar}
+          handleEditar={handleEditar}
+        />
+      </div>
+      <ModalApp
+        isOpen={modalIsOpenId}
+        onRequestClose={closeModal}
+        handleClickModal={modalData.aceptarFn}
+        text={modalData.modalText}
+        textBtn={modalData.modalBtnText} 
+      >
+        <FormUsers
+          handleAddEdit={handleAddEdit}
+          newUserData={newUserData}
+          setNewUserData={setNewUserData}
           handleClickModal={modalData.aceptarFn}
-          text={modalData.modalText}
-          textBtn={modalData.modalBtnText} >
-          <FormUsers
-            handleAddEdit={handleAddEdit}
-            newUserData={newUserData}
-            setNewUserData={setNewUserData}
-            handleClickModal={modalData.aceptarFn}
-            closeModal={closeModal}
-            isEditForm={showEditForm} />
-        </ModalApp>
-   </div>
-   
-    );
- };
- 
+          closeModal={closeModal}
+          isEditForm={showEditForm} 
+        />
+      </ModalApp>
+    </div>
+  );
+};
 
 export default AdminUsers;
+
+
+
+

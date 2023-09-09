@@ -1,13 +1,4 @@
-.nav{
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  margin-top: 2%;
-}
+
 .navDesplegable{
   display: flex;
   justify-content: end;
@@ -33,7 +24,7 @@
   }
 
   .button-view {
-    width: 260px;
+    width: 253px;
     height: 56px;
     padding: 10px 20px;
     line-height: normal;
@@ -47,18 +38,7 @@
     border-radius: 8px;
 }
 
-  .dropdown-button {
-    width: 52.847px;
-    height: 53.797px;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    background-image: url("img/menu.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: right-bottom;
-  }
+
   .user-navBar{
     width: 60px;
     height: 60px;

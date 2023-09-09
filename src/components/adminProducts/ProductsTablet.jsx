@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function ProductsTablet(props) {
   const { products } = props;
@@ -11,7 +13,7 @@ export default function ProductsTablet(props) {
           <th>IMAGEN</th>
           <th>PRECIO</th>
           <th>TIPO</th>
-          <th>Acciones</th>
+          <th>ACCIONES</th>
         </tr>
       </thead>
       <tbody>
@@ -37,3 +39,15 @@ export default function ProductsTablet(props) {
     </table>
   );
 }
+
+ProductsTablet.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.shape({
+    producto: PropTypes.string,
+    imagen: PropTypes.string,
+    precio: PropTypes.number,
+    tipo: PropTypes.string,
+    id: PropTypes.number
+  })).isRequired,
+  editRow: PropTypes.func.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
+};

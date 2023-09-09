@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './header.css';
 import Title from '../title/Title';
-import NavBar from '../navBar/NavBar';
+import NavBar from '../NavBar/NavBar';
 
 
 function Header({title}) {
