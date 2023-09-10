@@ -39,13 +39,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.container-btn-add{
-    background: #CF463F;
-}
-
-
-
-
 .buttonGenerarOrder{
     height: 39px;
     border-radius: 10px;
@@ -61,14 +54,15 @@
     transform: scale(1.1);
     transition: .3s;
     width: 192px;
-    margin: 0px 38px 0px 68px;
+    margin: 7px 5px -29px 25px;
+      margin-top: 7px;
+    margin-top: 0px;
     cursor: pointer;
-    margin-top: auto;
 }
 
 .buttonGenerarOrder:hover {
-    background-color: black;
-    color:white;
+    background-color: whitesmoke;
+    color:rgb(5, 4, 4);
 }
 
 .button-min{

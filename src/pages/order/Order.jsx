@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react';
 import Header from "../../components/header/Header";
 import Modal from "../../components/modal/Modal";
 import {editOrder} from '../../utils/apiFunctions';
+import { Link } from 'react-router-dom';
+import backButton from '../../assets/backBtn.png';
+import logoutButton from '../../assets/logout.png';
 
 const Order = () => {
 
@@ -101,6 +104,18 @@ const Order = () => {
         </div>
       </section>
         </div>
+        <footer>
+          <div className='footer-button'>
+            <Link to='/'>
+              <img src={backButton} alt='Regresar' /> 
+            </Link>
+          </div>
+          <div className='footer-button'>
+            <Link to='/logout'>
+              <img src={logoutButton} alt='Salir' /> 
+            </Link>
+          </div>
+        </footer>
     </>
   );
 };

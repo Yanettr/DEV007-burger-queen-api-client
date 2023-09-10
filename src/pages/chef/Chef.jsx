@@ -169,6 +169,7 @@ const Chef = () => {
         </footer>
       </section>
       <img src='/src/assets/waiter.png' className='chef' alt='Chef' />
+      
     </div>
   );
 };
