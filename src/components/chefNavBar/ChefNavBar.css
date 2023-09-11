@@ -1,0 +1,67 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    width: 94%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navDesplegable{
+  display: flex;
+  justify-content: end;
+}
+  
+  /* Estilos para el logo */
+  .user-nav {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Estilos para el título en el header */
+  .header-title {
+    font-size: 24px;
+  }
+  
+  /* Estilos para el menú desplegable */
+  .menus-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFE0AF;
+    border-radius: 10px;
+    width: 150px;
+    height: 145px;
+    margin-top: -40px;
+    z-index: 2;
+
+  }
+
+  .nav-links{
+    width: 140px;
+    height: 46.912px;
+    border-radius: 10px;
+    background: #CF463F;
+    text-decoration: none;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0); 
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+
+  
+  .user-navBar{
+    width: 90px;
+    height: 90px;
+  }
+
+  .user-navBar img{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+
+
+  

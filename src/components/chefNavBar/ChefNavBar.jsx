@@ -1,15 +1,6 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import '../../components/navBar/NavBar.css';
-
-const NavLinks = () => (
-  <div className="menus-container">
-    <NavLink to="/" className="nav-links">Cerrar Sesión</NavLink>
-    <NavLink to="/Order" className="nav-links">Órdenes</NavLink>
-  </div>
-);
+import './ChefNavBar.css';
 
 const ChefNavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -32,11 +23,16 @@ const ChefNavBar = () => {
     }
   };
 
+  
+  if (!userRole) {
+    return null; 
+  }
+
   return (
     <nav className="navbar">
       <div className='nav'>
         <div className="user-navBar">
-          <img src={getUserImageSrc()} alt="User" className="user-nav" />
+          <img src={getUserImageSrc()} alt="Chef" className="chef-nav" />
         </div>
       </div>
     </nav>

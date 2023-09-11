@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './ButtonView.css';
+import './ButtonViewsWaiter.css';
 
-function ButtonViews({ Text1, Text2, Text3, onClickButton1, onClickButton2, onClickButton3 }) {
+function ButtonViewsWaiter({ Text1, Text2, Text3, onClickButton1, onClickButton2, onClickButton3 }) {
   const [clickedButton, setClickedButton] = useState(1);
 
   const handleButtonClick = (buttonNumber) => {
@@ -43,7 +43,7 @@ function ButtonViews({ Text1, Text2, Text3, onClickButton1, onClickButton2, onCl
   );
 }
 
-ButtonViews.propTypes = {
+ButtonViewsWaiter.propTypes = {
   Text1: PropTypes.string.isRequired,
   Text2: PropTypes.string.isRequired,
   Text3: PropTypes.string.isRequired,
@@ -52,4 +52,4 @@ ButtonViews.propTypes = {
   onClickButton3: PropTypes.func.isRequired,
 };
 
-export default ButtonViews;
+export default ButtonViewsWaiter;

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import AdminHeader from '../adminHeader/AdminHeader';
 import FormUsers from '../../components/formUsers/FormUsers';
 import ModalApp from '../modal/Modal';
-import ButtonViews from '../buttonView/ButtonView';
+import ButtonViews from '../buttonViews/ButtonViews';
 import TableUsers from '../TableAdmin/TableUsers';
 
  const AdminUsers = () => { 
@@ -216,7 +216,7 @@ import TableUsers from '../TableAdmin/TableUsers';
       <div className='conteiner-button'>
         {token ? (
           <Link to="/admin">
-            <ButtonViews Text1={'PRODUCTOS'} Text2={'USUARIOS'} Text3={'SALIR'} />
+            <ButtonViews Text1={'PRODUCTOS'} Text2={'USUARIOS'} />
           </Link>
         ) : (
           <button onClick={logOut}>Salir</button>

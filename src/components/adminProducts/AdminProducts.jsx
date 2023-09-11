@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import AdminHeader from '../adminHeader/AdminHeader';
 import { useNavigate, Link } from 'react-router-dom';
 import './adminProducts.css';
-import ButtonViews from '../buttonView/ButtonView';
+import ButtonViews from '../buttonViews/ButtonViews';
 import ModalApp from '../modal/Modal';
 import FormProducts from '../formProducts/FormProducts';
 import TableProducts from '../TableAdmin/TableProducts';

@@ -1,27 +1,7 @@
+.navbar{
+  width: 105%;
 
-.navDesplegable{
-  display: flex;
-  justify-content: end;
 }
-  /* Estilos para el logo */
-  .user-nav {
-    width: 50px;
-    height: 50px;
-  }
-  /* Estilos para el título en el header */
-  .header-title {
-    font-size: 24px;
-  }
-  /* Estilos para el menú desplegable */
-  .menu-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #FFE0AF;
-    border-radius: 10px;
-    width: 149px;
-    height: 65px;
-  }
 
   .button-view {
     width: 253px;
@@ -38,7 +18,6 @@
     border-radius: 8px;
 }
 
-
   .user-navBar{
     width: 60px;
     height: 60px;
@@ -47,9 +26,16 @@
     width: 100%;
     height: auto;
     padding: 0px;
+    margin: 20px 20px 17px 56px;
   }
 
   .nav-link.active {
     background-color: #760909;
     color: #FFF;
+  }
+  .signout-admin{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin:0px 19px 7px 887px;
   }
