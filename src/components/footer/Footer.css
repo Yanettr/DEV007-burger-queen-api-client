@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .footer-button {
+    margin: 0 10px;
+  }
+  
+  .footer-button img {
+    width: 30px;
+    height: 30px;
+  }
+  

@@ -3,7 +3,6 @@
     width: 30px
 }
 .container-btn-admin-workers-products{
-    /* background-color: blueviolet; */
     height: 50px;
     width: 80%;
     position: relative;
@@ -20,19 +19,12 @@
     background-color: black;
     
 }
-.dashboard-table-row,.container-edit-icon,.container-delete-icon{
-    border: none;
-    border-bottom: 1px solid rgba(234, 106, 18, 1);
-   
-    
-}
 
 .table-dashboard-workers th {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     border: none;
     height: 35px;
-   
   }
 
   td {
@@ -41,18 +33,7 @@
   }
   
 .btn-add-product{
-    width: 261px;
-    height: 45px;
-    border-radius: 10px;
-    background: #760909;
-    color: rgb(255, 255, 255);
-    font-family: Inter;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: center;
-    margin: 20px 20px 20px 671px;
+    background-color: #760909 !important;
     }
     button:hover {
         border-color: #D6C288;

@@ -1,34 +1,29 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from "react-router-dom";
 import './NavBarAdmin.css';
-
-
-const NavLinks = () => (
-  <div className="menu-container">
-    <NavLink to="/" className="nav-link">Cerrar Sesión</NavLink>
-  </div>
-);
+import AdminImage from "../../../img/admin.png";
+import LogoOut from "../../assets/logout.png";
 
 const NavBarAdmin = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const navigate = useNavigate();
+
+    function signOut() {
+        navigate('/');
+    }
   return (
     <nav className="navbar">
       <div className='nav'>
-      <div className="user-navBar">
-        <img src="/img/admin.png" alt="Logo" className="user-nav"/>
-      </div>
-      <button onClick={toggleDropdown} className="dropdown-button">
-      </button>
-      </div>
-      <div className='navDesplegable'>
-      {isDropdownOpen && <NavLinks />}
+        <div className="user-navBar">
+          <img src={AdminImage} alt="Admin" className="user-nav"/> {/* Usamos la imagen importada */}
+        </div>
+        <div className="signout-admin" onClick={signOut}>
+                    <img src={LogoOut} alt="Icon for sign out" className="icon" />
+                </div>
+        
       </div>
     </nav>
   );
 };
-export default NavBarAdmin;
 
+export default NavBarAdmin;

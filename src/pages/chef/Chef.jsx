@@ -2,10 +2,10 @@ import './chef.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { editOrder } from '../../utils/apiFunctions';
-import Title from '../../components/title/Title'
 import backButton from '../../assets/backBtn.png';
 import logoutButton from '../../assets/logout.png';
-import ChefNavBar from '../../components/ChefNavBar/ChefNavBar';
+import Title from '../../components/title/Title';
+import ChefHeader from '../../components/chefHeader/ChefHeader';
 
 const Chef = () => {
   const [orders, setOrders] = useState([]);
@@ -102,10 +102,12 @@ const Chef = () => {
   };
 
   return (
-    <div className='body'>
-      <Title title='ORDENES' />
-      <ChefNavBar/>
+    <div className='body-chef'>
+      <ChefHeader/>
+      <div className='title-header-chef'>
+      <Title title="MENU" />
       <div>
+      </div>
       </div>
       <section className='container-cooking'>
         <div className='container-orders-table'>
@@ -168,8 +170,6 @@ const Chef = () => {
           </div>
         </footer>
       </section>
-      <img src='/src/assets/waiter.png' className='chef' alt='Chef' />
-      
     </div>
   );
 };

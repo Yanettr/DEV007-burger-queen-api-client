@@ -4,7 +4,7 @@ import './Waiter.css';
 import Swal from 'sweetalert2';
 import ProductsOrder from '../../components/productsOrder/ProductsOrder';
 import Header from '../../components/header/Header';
-import ButtonViews from '../../components/buttonView/ButtonView';
+import ButtonViewsWaiter from '../../components/buttonViewsWaiter/ButtonViewsWaiter';
 import NameOrder from '../../components/nameOrder/NameOrder';
 import OptionsProductsMenu from '../../components/optionProductsMenu/optionProductsMenu';
 import {createOrder} from '../../utils/apiFunctions';
@@ -107,11 +107,13 @@ console.log(error)
     <div className='body'>
       <Header title='MENU' />
       <div>
-        <ButtonViews
+        <ButtonViewsWaiter
           Text1={'Desayuno'}
           Text2={'Almuerzo'}
+          Text3={'Ordenes'}
           onClickButton1={() => setSelectedProductType('Desayuno')}
           onClickButton2={() => setSelectedProductType('Almuerzo')}
+          onClickButton3={() => setSelectedProductType('Ordenes')}
         />
       </div>
       <div className='container1'>

@@ -1,16 +1,5 @@
 .btn-add-user {
-    width: 261px;
-    height: 45px;
-    border-radius: 10px;
-    background: #760909;
-    color: rgb(255, 255, 255);
-    font-family: Inter;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: center;
-    margin: 20px 20px 20px 671px;
+    background-color: #760909 !important;
     }
     button:hover {
         border-color: #D6C288;
@@ -18,12 +7,12 @@
 
   .new-container-btn-add{
       margin:0%;
-      background-color: white;
+      background-color:   whitesmoke; 
 
    }
 
   .table-subtitles{
-    background-color:white; 
+    background-color: whitesmoke; 
   }
    
   .dashboard-products-image{
@@ -51,12 +40,13 @@
     border-bottom: 1px solid rgb(240, 236, 233);
 }
 
-.table-dashboard-workers th {
+.table-dashboard-workers  {
     font-family: 'Playfair Display', serif;
-    font-weight: bold;
     border: none;
-    height: 35px;
+    width: 100%;
+    margin: 29px 0px 0px 5px;
   }
+  
 
   .container-dashboard-btnAddWorker{
     height: 78%;
@@ -64,7 +54,22 @@
   }
 
   .new-container {
-    background-color: white;
-    height: 96%;
+    background-color: whitesmoke; 
+    height: 91%;
     overflow-y: scroll;
   }
+
+  .table-subtitles{
+    color: inherit;
+    display: table-row;
+    vertical-align: middle;
+    outline: 0;
+  
+  }
+
+  .tbody{
+    display: table-row-group;
+
+
+  }
+  

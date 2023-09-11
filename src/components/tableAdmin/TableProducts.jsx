@@ -1,26 +1,28 @@
-import { TableContainer, Table, TableHead, TableBody, TableRow } from '@mui/material'
-import { PropTypes } from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
-import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
-import Button from '../button/Button';
-import './TableProducts.css'
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, TableContainer, Table, TableHead, TableBody, TableRow } from '@mui/material';
+import { Add, Edit, Delete } from '@mui/icons-material';
+import './TableProducts.css';
 
-
-const iconAddProduct = <FontAwesomeIcon icon={faSquarePlus} size="xl" style={{ color: "#FFFF", }} />
-const iconEditProduct = <FontAwesomeIcon icon={faPenToSquare} size="2xl" style={{ color: "#1E3050", }} />
-const iconDeleteProduct = <FontAwesomeIcon icon={faRectangleXmark} size="2xl" style={{ color: "#D11515", }} />
+const iconAddProduct = <Add sx={{ fontSize: '1.5rem', color: "#FFFF" }} />;
+const iconEditProduct = <Edit sx={{ fontSize: '2rem', color: "#1E3050" }} />;
+const iconDeleteProduct = <Delete sx={{ fontSize: '2rem', color: "#760909 " }} />;
 
 const TableProducts = ({ setShowEditForm, products, handleAddProduct, handleDeleteProduct, handleEditProduct, workersView }) => {
-
-  
   return (
     <>
       <div className='new-container'>
         <div className="container-table">
           <div className='new-container-btn-add'>
-            <Button className='btn-add-product' text={'AGREGAR PRODUCTO'} dataTestid={'Testidbtn-ololo'} icon={iconAddProduct} onClick={() => { setShowEditForm(false); handleAddProduct(); }} >
+            <Button
+              className='btn-add-product'
+              variant="contained"
+              color="primary"
+              startIcon={iconAddProduct}
+              onClick={() => { setShowEditForm(false); handleAddProduct(); }}
+            >
+              AGREGAR PRODUCTO
             </Button>
           </div>
           <TableContainer className='container-table-workers'>
@@ -46,8 +48,8 @@ const TableProducts = ({ setShowEditForm, products, handleAddProduct, handleDele
                     <td className='dashboard-table-row'>
                       <img className='dashboard-products-image' src={product.image} alt="products-image" />
                     </td>
-                    <td className='container-edit-icon' onClick={() => { setShowEditForm(true); handleEditProduct(product) }}><i>{iconEditProduct}</i></td>
-                    <td className='container-delete-icon' onClick={() => handleDeleteProduct(product)}><i>{iconDeleteProduct}</i></td>
+                    <td className='container-edit-icon' onClick={() => { setShowEditForm(true); handleEditProduct(product) }}>{iconEditProduct}</td>
+                    <td className='container-delete-icon' onClick={() => handleDeleteProduct(product)}>{iconDeleteProduct}</td>
                   </TableRow>
                 ))}
               </TableBody>
@@ -67,4 +69,5 @@ TableProducts.propTypes = {
   handleEditProduct: PropTypes.func,
   workersView: PropTypes.func
 }
-export default TableProducts
+
+export default TableProducts;

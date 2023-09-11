@@ -1,0 +1,24 @@
+
+
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .icon {
+
+    width: 54px;
+    height: 47px;
+    margin: 20px 20px 20px -14px;
+  }
+  
+  .signout {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: -49px -92px 15px 888px;
+  }
+
+  
+  
