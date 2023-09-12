@@ -2,12 +2,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ButtonViewsWaiter.css';
+import { useNavigate } from 'react-router-dom'; 
 
 function ButtonViewsWaiter({ Text1, Text2, Text3, onClickButton1, onClickButton2, onClickButton3 }) {
   const [clickedButton, setClickedButton] = useState(1);
+  const navigate = useNavigate(); // Inicializa useNavigate
 
   const handleButtonClick = (buttonNumber) => {
     setClickedButton(buttonNumber);
+  };
+
+  const handleOrderButtonClick = () => {
+ 
+    navigate('/order');
   };
 
   return (
@@ -34,7 +41,7 @@ function ButtonViewsWaiter({ Text1, Text2, Text3, onClickButton1, onClickButton2
         className={`button-view ${clickedButton === 3 ? 'active' : ''}`}
         onClick={() => {
           handleButtonClick(3);
-          onClickButton3(); 
+          handleOrderButtonClick(); 
         }}
       >
         {Text3}

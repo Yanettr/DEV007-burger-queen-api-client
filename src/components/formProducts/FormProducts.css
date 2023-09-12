@@ -4,11 +4,9 @@
     flex-shrink: 0;
 }
 .container-input-form-products {
-    background-color: #fcfafa;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 14px;
-    margin: 30px 40px -29px 153px;
     height: 144%;
     width: 121%;
 }

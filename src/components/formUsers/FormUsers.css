@@ -2,7 +2,6 @@
     display: grid;
     justify-content: center;
     justify-items: center;
-    width: max-content;
 }
 
 .container-input-form-products{
@@ -18,9 +17,9 @@
     border-radius: 24px;
     width: 188px;
     height: 44px;
-    background-color: rgba(234, 106, 18, 1);
+    background-color:#760909;
     color: white;
-    border: 1px solid rgba(234, 106, 18, 1);
+    border: 1px solid white;
     font-size: 22px;
 }
 
@@ -45,7 +44,6 @@
 
 .btn-cancel{
    left: 50%;
-   bottom: 5%;
    position: fixed;
 }
 
