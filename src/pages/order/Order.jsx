@@ -2,12 +2,13 @@
 import './Order.css';
 import Ticket from '../../components/ticket/Tickets';
 import { useState, useEffect } from 'react';
-import Header from "../../components/header/Header";
+import OrderHeader from "../../components/header/Header";
 import Modal from "../../components/modal/Modal";
 import {editOrder} from '../../utils/apiFunctions';
-import { Link } from 'react-router-dom';
-import backButton from '../../assets/backBtn.png';
-import logoutButton from '../../assets/logout.png';
+import LogoOut from "../../assets/logout.png";
+
+import { useNavigate } from "react-router-dom";
+
 
 const Order = () => {
 
@@ -24,7 +25,11 @@ const Order = () => {
       })
       .catch(error => console.log(error))
   }
+  const navigate = useNavigate();
 
+  function signOut() {
+      navigate('/');
+  }
   const updateOrderStatus = (orderId, newStatus) => {
     setOrders(prevOrders => {
       return prevOrders.map(order => {
@@ -86,11 +91,14 @@ const Order = () => {
 
   return (
     <>
+      <div className='nav-order'>
+        <div className="signout-order" onClick={signOut}>
+                    <img src={LogoOut} alt="Icon for sign out" className="icon-order" />
+                </div>
+        
+      </div>
       <div className='body'>
-      <Header title='MENU' />
-      <section className='title-chef-orders'>
-        <h1 className='title-status-chef'>Listas para servir</h1>
-      </section>
+      <OrderHeader title='PEDIDOS LISTOS' />
       <section className='container-order-status'>
         <div className='container-order-ticket-status'>
           {orders
@@ -104,18 +112,6 @@ const Order = () => {
         </div>
       </section>
         </div>
-        <footer>
-          <div className='footer-button'>
-            <Link to='/'>
-              <img src={backButton} alt='Regresar' /> 
-            </Link>
-          </div>
-          <div className='footer-button'>
-            <Link to='/logout'>
-              <img src={logoutButton} alt='Salir' /> 
-            </Link>
-          </div>
-        </footer>
     </>
   );
 };

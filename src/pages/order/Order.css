@@ -82,4 +82,19 @@
   .modal-button:hover {
     background-color: #0056b3;
   }
+
+  .signout-order{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin:0px 19px 7px 887px;
+  }
+
+  .icon-order {
+      width: 51px;
+      height: auto;
+      margin: 0px 0px -179px 204px;
+    }
+
+
   
