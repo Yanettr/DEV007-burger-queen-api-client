@@ -40,7 +40,7 @@ const TableUsers = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, h
             {Array.isArray(workers) && workers.map((worker, index) => (
               <tr key={index}>
                 <td className='dashboard-table-row'>{index + 1}</td>
-                <td className='dashboard-table-row'>{worker.nombre || ''}</td>
+                <td className='dashboard-table-row'>{worker.name || ''}</td>
                 <td className='dashboard-table-row'>{worker.role}</td>
                 <td className='dashboard-table-row'>{worker.email}</td>
                 <td className='container-edit-icon' onClick={() => { setShowEditForm(true); handleEditar(worker) }}>{iconEditWorker}</td>

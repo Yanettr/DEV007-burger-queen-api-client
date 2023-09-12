@@ -5,11 +5,7 @@
   
   .conteiner-button{
     margin: 6px 6px -13px 236px;
-
-
-
   }
-
 
   .container-title-employe {
     width: 100%;
@@ -84,38 +80,6 @@
     display: flex;
     justify-content: center;
   }
-  
-  /*.button-option-employe {
-    grid-area: button-option-employe;
-    display: flex;
-    justify-content: space-around;
-  }*/
-  
-  /*.button-edit-employe {
-    background-color: yellow;
-    border: none;
-    padding: 3px;
-    letter-spacing: 1px;
-    width: 120px;
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    font-weight: bolder;
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-  }*/
-  
-  /*.button-delete-employe {
-    background-color: red;
-    border: none;
-    padding: 3px;
-    letter-spacing: 1px;
-    width: 120px;
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    font-weight: bolder;
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-  }*/
-  
-
   
   h5 {
     margin: 15px 0px 1px 0px;
