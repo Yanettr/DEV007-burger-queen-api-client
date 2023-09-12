@@ -15,5 +15,6 @@ label{
 
 .customer-input{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    margin: -15px -123px 0px 26px;
 }

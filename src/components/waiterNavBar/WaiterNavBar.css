@@ -1,0 +1,47 @@
+.navbar{
+    width: 105%;
+  
+  }
+  
+    .button-view {
+      width: 253px;
+      height: 56px;
+      padding: 10px 20px;
+      line-height: normal;
+      cursor: pointer;
+      font-family: 'Voltaire', sans-serif;
+      transition: .3s;
+      border: solid 1px whitesmoke;
+      font-size: 24px;
+      text-decoration: none;
+      color: rgb(9, 9, 9);
+      border-radius: 8px;
+  }
+  
+    .waiter-navBar{
+      width: 60px;
+      height: 60px;
+    }
+    .waiter-navBar img{
+      width: 100%;
+      height: auto;
+      padding: 0px;
+      margin: 20px 20px 17px 56px;
+    }
+  
+    .nav-link.active {
+      background-color: #760909;
+      color: #FFF;
+    }
+    .signout-waiter{
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin:0px 19px 7px 887px;
+    }
+
+    .icon-waiter {
+        width: 51px;
+        height: auto;
+        margin: 16px 58px 20px 20px;
+      }
