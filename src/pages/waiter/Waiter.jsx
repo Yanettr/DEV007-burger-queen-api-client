@@ -3,13 +3,11 @@ import React, { useState } from 'react';
 import './Waiter.css';
 import Swal from 'sweetalert2';
 import ProductsOrder from '../../components/productsOrder/ProductsOrder';
-import Header from '../../components/header/Header';
+import WaiterHeader from '../../components/waiterHeader/WaiterHeader';
 import ButtonViewsWaiter from '../../components/buttonViewsWaiter/ButtonViewsWaiter';
 import NameOrder from '../../components/nameOrder/NameOrder';
 import OptionsProductsMenu from '../../components/optionProductsMenu/optionProductsMenu';
 import {createOrder} from '../../utils/apiFunctions';
-
-
 
 const Waiter = () => {
   const [order, setOrder] = useState([]);
@@ -104,7 +102,7 @@ console.log(error)
 
   return (
     <div className='body'>
-      <Header title='MENU' />
+      <WaiterHeader title='MENU' />
       <div>
         <ButtonViewsWaiter
           Text1={'Desayuno'}
