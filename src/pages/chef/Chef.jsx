@@ -134,7 +134,7 @@ const Chef = () => {
                 })
                 .map((order) => (
                   <tr key={order.id}>
-                    <td>#{order.table}</td>
+                    <td>#{order.tableNumber}</td>
                     <td>{order.client}</td>
                     <td>
                       <div

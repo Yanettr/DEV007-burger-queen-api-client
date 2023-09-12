@@ -103,6 +103,7 @@ import TableUsers from '../TableAdmin/TableUsers';
       console.log('editar', user)
       const editWorker = {
         email: user.email,
+        name: user.name,
         password: user.password,
         role: user.role
       };

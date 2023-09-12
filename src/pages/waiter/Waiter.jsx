@@ -12,7 +12,9 @@ import {createOrder} from '../../utils/apiFunctions';
 const Waiter = () => {
   const [order, setOrder] = useState([]);
   const [selectedProductType, setSelectedProductType] = useState('Desayuno'); 
-  const [customerName, setCustomerName] = useState(''); 
+  const [customerName, setCustomerName] = useState('');  
+  const [tableNumber, setTableNumber] = useState(''); 
+  
   const handleAddToOrder = (product) => {
     const existingProductIndex = order.findIndex(item => item.id === product.id);
 
@@ -46,6 +48,10 @@ const Waiter = () => {
     setCustomerName(name);
   };
 
+  const handleTableNumberChange = (number) => {
+    setTableNumber(number);
+  };
+
   const handleGenerateOrder = () => {
     if (order.length === 0 || customerName === '') {
       Swal.fire({
@@ -60,6 +66,7 @@ const Waiter = () => {
         
       const orderObject = {
         client: customerName,
+        tableNumber: tableNumber,
         products: order.map(product => ({
           qty: product.quantity,
           product: {
@@ -97,7 +104,7 @@ console.log(error)
     setOrder([]);
 
     setCustomerName('');
-
+    setTableNumber('');
   };
 
   return (
@@ -122,9 +129,11 @@ console.log(error)
         </div>
         <div className='order'>
         <NameOrder 
-  customerName={customerName}
-  onCustomerNameChange={handleCustomerNameChange}
-/>
+            customerName={customerName}
+            onCustomerNameChange={handleCustomerNameChange}
+            tableNumber={tableNumber}
+            onTableNumberChange={handleTableNumberChange}
+          />
           <ProductsOrder 
           order={order} 
           onAddToOrder={handleAddToOrder} 
