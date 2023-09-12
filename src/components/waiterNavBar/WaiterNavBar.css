@@ -1,47 +1,88 @@
-.navbar{
-    width: 105%;
+.navbar {
+    width: 94%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin-top: 2%;
+}
+
+.navDesplegable{
+  display: flex;
+  justify-content: end;
+}
   
+  /* Estilos para el logo */
+  .user-nav {
+    width: 50px;
+    height: 50px;
   }
   
-    .button-view {
-      width: 253px;
-      height: 56px;
-      padding: 10px 20px;
-      line-height: normal;
-      cursor: pointer;
-      font-family: 'Voltaire', sans-serif;
-      transition: .3s;
-      border: solid 1px whitesmoke;
-      font-size: 24px;
-      text-decoration: none;
-      color: rgb(9, 9, 9);
-      border-radius: 8px;
+  /* Estilos para el título en el header */
+  .header-title {
+    font-size: 24px;
   }
   
-    .waiter-navBar{
-      width: 60px;
-      height: 60px;
-    }
-    .waiter-navBar img{
-      width: 100%;
+  /* Estilos para el menú desplegable */
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFE0AF;
+    border-radius: 10px;
+    width: 150px;
+    height: 145px;
+    margin-top: -40px;
+    z-index: 2;
+
+  }
+
+  .nav-link{
+    width: 140px;
+    height: 46.912px;
+    border-radius: 10px;
+    background: #CF463F;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0); /* Color predeterminado del texto */
+  text-decoration: none;
+  margin-right: 20px;
+  }
+  
+
+  .waiter-nav{
+    width: 142px;
+    height: 148px;
+    padding: 20px 20px 20px 20px;
+  }
+
+  .waiter-nav img{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+
+  .signout-waiter{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin:0px 19px 7px 887px;
+  }
+
+  .icon-waiter {
+      width: 51px;
       height: auto;
-      padding: 0px;
-      margin: 20px 20px 17px 56px;
-    }
-  
-    .nav-link.active {
-      background-color: #760909;
-      color: #FFF;
-    }
-    .signout-waiter{
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      margin:0px 19px 7px 887px;
+      margin: 16px 58px 20px 20px;
     }
 
-    .icon-waiter {
-        width: 51px;
-        height: auto;
-        margin: 16px 58px 20px 20px;
-      }

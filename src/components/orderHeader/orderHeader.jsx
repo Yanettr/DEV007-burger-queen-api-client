@@ -3,24 +3,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './WaiterHeader.css';
 import Title from '../title/Title';
-import WaiterNavBar from '../waiterNavBar/waiterNavBar';
 
-function WaiterHeader({title}) {
+function OrderHeader({ title }) { 
 
   return (
     <header className="header">
-      <WaiterNavBar/>
       <div className='title-header'>
-      <Title title={title} />
+        <Title title={title} />
       </div>
     </header>
   );
 }
 
-
-WaiterHeader.propTypes = {
-  title: PropTypes.string.isRequired, 
+OrderHeader.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
-export default WaiterHeader;
-
+export default OrderHeader;
