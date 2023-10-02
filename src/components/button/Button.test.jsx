@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { Button } from '../../components/button/Button';
+import Button from '../../components/button/Button';
 
 import { describe, test, jest, expect } from '@jest/globals';
 

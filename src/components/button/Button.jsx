@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 import React from 'react';
 import PropTypes from 'prop-types'; 
 import './Button.css';
@@ -12,11 +13,11 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired, 
-  children: PropTypes.node, 
-  text: PropTypes.string,
-  icon: PropTypes.element,
-  dataTestid: PropTypes.string,
+onClick: PropTypes.func.isRequired, 
+children: PropTypes.node, 
+text: PropTypes.string,
+icon: PropTypes.element,
+dataTestid: PropTypes.string,
 };
 
 export default Button;

@@ -6,9 +6,7 @@ import OrderHeader from "../../components/header/Header";
 import Modal from "../../components/modal/Modal";
 import {editOrder} from '../../utils/apiFunctions';
 import LogoOut from "../../assets/logout.png";
-
 import { useNavigate } from "react-router-dom";
-
 
 const Order = () => {
 
